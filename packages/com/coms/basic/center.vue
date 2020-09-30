@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 10:31:51
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 10:49:04
+ * @LastEditTime: 2020-09-30 23:09:25
 -->
 <template>
       <div class="contener">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import set from './js/setting'
+import set from '../js/setting'
 export default {
   name: "mc-center",
   mixins:[set],

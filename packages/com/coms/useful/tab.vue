@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import setting from './js/setting'
+import setting from '../js/setting'
 export default {
   name: "mc-tab",
   props: ["text"],

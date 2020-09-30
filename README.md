@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:09:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 21:22:02
+ * @LastEditTime: 2020-09-30 21:44:36
 -->
 # mycom-vue3
 
@@ -54,4 +54,6 @@ mc-tab-page表示轮播图单页
 </mc-tab>
 
 ```
+
+
 

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 15:29:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-28 22:19:27
+ * @LastEditTime: 2020-09-30 23:18:51
 -->
 <template>
   <div class="outer">
@@ -15,9 +15,10 @@
 </template>
 
 <script>
+import setting from '../js/setting'
 export default {
   name: "mc-middle",
-  props:['width'],
+  mixins:[setting],
   data:function(){
       return{
           

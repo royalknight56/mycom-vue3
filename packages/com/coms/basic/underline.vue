@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 21:12:56
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 09:45:31
+ * @LastEditTime: 2020-09-30 23:09:32
 -->
 <template>
       <div class="mc_text">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import setting from './js/setting'
+import setting from '../js/setting'
 export default {
   name: "mc-text",
   props:['size'],
