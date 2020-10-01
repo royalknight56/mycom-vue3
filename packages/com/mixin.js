@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 11:00:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 21:07:50
+ * @LastEditTime: 2020-10-01 14:05:33
  */
 // import alert from './coms/center.vue'
 // import vue from 'vue'
@@ -13,8 +13,10 @@ export function mixin(Vue) {
     Vue.mixin({
         date: function () {
             return {
-                mc_alert: []
+                mc_alert: [],
             }
+        },
+        monted: function () {
         },
         methods: {
             $alert: function () {

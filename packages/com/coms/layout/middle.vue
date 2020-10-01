@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 15:29:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 23:18:51
+ * @LastEditTime: 2020-10-01 09:44:13
 -->
 <template>
   <div class="outer">
@@ -36,5 +36,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 </style>

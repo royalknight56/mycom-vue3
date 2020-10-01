@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:10:01
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 23:21:00
+ * @LastEditTime: 2020-10-01 10:08:15
 -->
 <template>
   <div class="hello">
@@ -40,6 +40,7 @@ export default {
       current_page:'/unlock',
       level1_menu: [
         { name: "基本", page: "/basic" },
+        { name: "表单", page: "/form" },
       { name: "解锁", page: "/unlock" },
       { name: "布局", page: "/layout" },
       { name: "实用", page: "/useful" }

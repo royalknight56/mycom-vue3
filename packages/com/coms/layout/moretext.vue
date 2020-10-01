@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 21:23:19
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-28 21:28:03
+ * @LastEditTime: 2020-10-01 09:58:29
 -->
 <template>
   <div class="outer">
@@ -37,5 +37,6 @@ export default {
     color: rgba(0, 0, 0, 0.849);
     background-color: rgba(202, 202, 202, 0.26);
     border-left: 1px solid rgba(138, 138, 138, 0.425);
+    margin: 3px 0;
 }
 </style>

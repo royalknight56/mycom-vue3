@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 23:32:48
+ * @LastEditTime: 2020-10-01 11:11:21
 -->
 <template>
   <div class="main">
@@ -70,6 +70,7 @@
 import mixin from './mixin'
 
 export default {
+  
   name: "useful",
   props:['level1_menu'],
   mixins:[mixin],
@@ -78,6 +79,11 @@ export default {
       current_page: "/useful",
     };
   },
+  watch:{
+    test:function(){
+      console.log(this.test)
+    }
+  }
 };
 </script>
 
