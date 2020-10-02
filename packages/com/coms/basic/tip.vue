@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 18:58:55
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 20:13:57
+ * @LastEditTime: 2020-10-02 19:56:09
 -->
 <template>
     <div @mouseover="ifShow=true" @mouseleave="ifShow=false" class="mc_tip" >
@@ -29,6 +29,7 @@ export default {
     };
   },
   mounted: function () {},
+
 };
 </script>
 <style scoped>

@@ -4,32 +4,62 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 11:00:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 14:05:33
+ * @LastEditTime: 2020-10-02 21:48:53
  */
-// import alert from './coms/center.vue'
-// import vue from 'vue'
-// import { defineComponent } from 'vue'
-export function mixin(Vue) {
-    Vue.mixin({
+
+
+import { createApp } from 'vue'
+import alert_basic from './coms/alert/alert_basic.vue'
+import top_alert from './coms/alert/top_alert.vue'
+
+export function mixin(Vuein) {
+    Vuein.mixin({
         date: function () {
             return {
                 mc_alert: [],
+                ifalertmonted: false,
+                alert_app: null
             }
         },
-        monted: function () {
+        mounted: function () {
+            // console.log(this.ifalertmonted)
+            // if (this.ifalertmonted) {
+            //     //
+            // } else {
+            //     console.log('mc-提示组件挂载')
+            //     var div = document.createElement('div');
+            //     div.id = 'mcalert';
+            //     document.body.appendChild(div);
+            //     this.alert_app=createApp(alert_basic).mount('#mcalert')
+            //     console.log('mc-提示组件挂载完成')
+            //     this.ifalertmonted=true;
+            // }
         },
+        // beforeUnmount:function(){
+       
+        // },
         methods: {
-            $alert: function () {
-                // console.log(window.Vue)
-                // const MessageBoxConstructor = defineComponent(alert);
-                // console.log(MessageBoxConstructor())
-                // // var  instance = new MessageBoxConstructor({
-                // //     el: document.createElement('div')
-                // //   });
-                // var node=document.createElement('div');
-                // document.body.appendChild(instance.$el);
-                // console.log(instance)
-                // document.getElementById('app').appendChild(Vue.component(alert.name, alert)._container)
+            $alert: function (text) {
+                if (Vuein.alert_app) {
+                    //
+                } else {
+                    var div = document.createElement('div');
+                    div.id = 'mcalert';
+                    document.body.appendChild(div);
+                    Vuein.alert_app=createApp(alert_basic).mount('#mcalert')
+                }
+                Vuein.alert_app.show(text)
+            },
+            $top_alert: function (text) {
+                if (Vuein.top_alert_app) {
+                    //
+                } else {
+                    var div = document.createElement('div');
+                    div.id = 'mctopalert';
+                    document.body.appendChild(div);
+                    Vuein.top_alert_app=createApp(top_alert).mount('#mctopalert')
+                }
+                Vuein.top_alert_app.show(text)
             }
         }
     })

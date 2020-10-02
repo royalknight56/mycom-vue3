@@ -83,20 +83,38 @@
         <mc-text>提示框</mc-text>
         <mc-articl>
           出现一个提示框<br />
+          name代表标题,text代表内容<br />
           <br />
           示例
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-          <mc-unlock2 width="50%">
-            <mc-center> 登录框 </mc-center>
-          </mc-unlock2>
+          this.$alert({name:'hello',text:'hellohellohellohellohellohellohello'})
             `
           }}
           </code></pre>
         </mc-articl>
         <mc-button size="small" @click="alertDemo()"> 按钮 </mc-button>
       </mc-page>
+
+      <mc-page>
+        <mc-text>顶部提示框</mc-text>
+        <mc-articl>
+          出现一个顶部提示框<br />
+          text代表内容<br />
+          <br />
+          示例
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+          this.$alert({name:'hello',text:'hellohellohellohellohellohellohello'})
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+        <mc-button size="small" @click="alertDemo2()"> 按钮 </mc-button>
+      </mc-page>
+
     </div>
   </div>
 </template>
@@ -112,8 +130,17 @@ export default {
   data() {
     return {
       current_page:'/unlock',
+      count:0,
     };
   },
+  methods:{
+    alertDemo:function(){
+      this.$alert({name:'hello',text:'hellohellohellohellohellohellohello'})
+    },
+    alertDemo2:function(){
+      this.$top_alert(this.count++);
+    }
+  }
 };
 </script>
 

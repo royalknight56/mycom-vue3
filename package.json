@@ -1,6 +1,6 @@
 {
   "name": "mycom-vue3",
-  "version": "0.1.111",
+  "version": "0.1.112",
   "private": false,
   "main": "lib/mycom-vue3.umd.min.js",
   "scripts": {

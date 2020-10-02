@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:10:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-29 16:46:52
+ * @LastEditTime: 2020-10-02 19:42:57
 -->
 <template>
   <div class="outer">
@@ -49,6 +49,9 @@ export default {
 }
 .mc_button:hover{
     background-color: aliceblue;
+}
+.mc_button::selection{
+  display: none;
 }
 .small_button {
   padding: 5px;

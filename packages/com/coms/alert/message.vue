@@ -2,20 +2,23 @@
  * @Descripttion: 
  * @version: 
  * @Author: RoyalKnight
- * @Date: 2020-09-28 15:29:31
+ * @Date: 2020-10-02 16:57:03
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 20:51:10
+ * @LastEditTime: 2020-10-02 17:00:18
 -->
 <template>
-      <div class="mc_middle">
-          <slot></slot>
+  <div class="outer">
+      <div class="mc_message">
+          提示
+          <!-- <slot></slot> -->
       </div>
+  </div>
 </template>
 
 <script>
 import setting from '../js/setting'
 export default {
-  name: "mc-middle",
+  name: "mc-message",
   mixins:[setting],
   data:function(){
       return{
@@ -35,5 +38,6 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: antiquewhite;
 }
 </style>

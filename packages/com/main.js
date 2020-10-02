@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 19:42:13
+ * @LastEditTime: 2020-10-02 22:51:35
  */
 import mc_com1 from '../com/coms/unlock/unlock.vue'
 import mc_com2 from '../com/coms/unlock/unlock2.vue'
@@ -15,6 +15,9 @@ import mc_com4 from '../com/coms/useful/tabpage.vue'
 import mc_com5 from '../com/coms/layout/middle.vue'
 import mc_com7 from '../com/coms/layout/moretext.vue'
 import mc_com9 from '../com/coms/layout/page.vue'
+import mc_layout_card from '../com/coms/layout/card.vue'
+import mc_layout_collapse from '../com/coms/layout/collapse.vue'
+
 
 import mc_com6 from '../com/coms/basic/underline.vue'
 import mc_com8 from '../com/coms/basic/button.vue'
@@ -55,7 +58,9 @@ var components=[
     mc_com19,
     mc_basic1,
     mc_basic_tag,
-    mc_basic_tip
+    mc_basic_tip,
+    mc_layout_card,
+    mc_layout_collapse
 ];
 
 for(let component of components){
