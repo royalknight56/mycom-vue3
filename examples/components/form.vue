@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 18:55:18
+ * @LastEditTime: 2020-10-03 22:57:12
 -->
 <template>
   <div class="main">
@@ -37,13 +37,13 @@
         <mc-articl
           >输入框<br />
           可以设置height值与widght值<br />
-          绑定值可以获取到当前输入的内容<br />
-          示例
+          使用v-model:value来绑定值<br />
+          可以获取到当前输入的内容<br />
+          placeholder指示提示的内容<br>
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
             <mc-input v-model:value="inputch" placeholder="请输入密码"></mc-input>
-      
             `
           }}
           </code></pre>
@@ -59,7 +59,6 @@
           >标题的格式<br />
           可以设置size 为 small或large <br />
           可以设置type 为 red 或 blue<br />
-          示例
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
@@ -81,10 +80,21 @@
         <mc-text>选择器</mc-text>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
-          用户选择的结果的label会保存到绑定的值中 示例
+          label指示可选项 示例中传入的label值如下<br />
+          其中label为提示,value为用户选择后传给v-model:value的值<br />
+          用户选择的结果 会保存到v-model:value绑定的值中<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
+      selectlabel: [
+        { label: "草莓sdasfsda", value: "a" },
+        { label: "香蕉", value: "b" },
+        { label: "草莓", value: "a" },
+        { label: "香蕉", value: "b" },
+        { label: "草莓", value: "a" },
+        { label: "香蕉", value: "b" },
+      ],
+
         <mc-select width="100px" v-model:value="selectch" :label="selectlabel">
        `
           }}
@@ -101,8 +111,9 @@
       <mc-page>
         <mc-text>开关</mc-text>
         <mc-articl
-          >一组复选按钮,使用v-model:value绑定值<br />
-          用户选择的结果会保存到绑定的值中 示例
+          >一只开关,使用v-model:value绑定值<br />
+          用户选择的结果会保存到绑定的值中<br />
+          不建议在switch中传入innerhtml
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
@@ -111,19 +122,23 @@
           }}
           </code></pre>
         </mc-articl>
-        <mc-switch v-model:value="switchch" label="1"> 开关 </mc-switch>
+        <mc-middle>
+          <mc-switch v-model:value="switchch" label="1"> 开关 </mc-switch>
+        </mc-middle>
         {{switchch}}
+        
       </mc-page>
 
       <mc-page>
         <mc-text>单选按钮</mc-text>
         <mc-articl
           >一组单选按钮,使用v-model:value绑定值<br />
-          用户选择的结果的label会保存到绑定的值中 示例
+          v-model:value绑定同一个值时,他们将是同一组按钮<br />
+          用户选择的结果的label会保存到绑定的值中
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-      <mc-radio v-model:value="radioch" label="1"> 单选按钮 </mc-radio>
+        <mc-radio v-model:value="radioch" label="1"> 单选按钮 </mc-radio>
         <mc-radio v-model:value="radioch" label="2"> 单选按钮 </mc-radio>
         <mc-radio v-model:value="radioch" label="3"> 单选按钮 </mc-radio>
 
@@ -141,7 +156,8 @@
         <mc-text>复选框</mc-text>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
-          用户选择的结果的label会保存到绑定的值中 示例
+          v-model:value绑定同一个值时,他们将是同一组按钮<br />
+          用户选择的结果的label会作为一个数组保存到绑定的值中
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
@@ -165,10 +181,10 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>数字选择</mc-text>
+        <mc-text>数字选择器</mc-text>
         <mc-articl
           >数字选择,使用v-model:value绑定值<br />
-          用户选择的结果会保存到绑定的值中 示例
+          用户选择的结果会保存到绑定的值中
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
@@ -185,12 +201,13 @@
         <mc-text>日期选择</mc-text>
         <mc-articl
           >日期选择,使用v-model:value绑定值<br />
-          用户选择的结果会保存到绑定的值中 示例
+          用户选择的结果会保存到绑定的值中<br />
+          结果的格式为一个对象<br />
+          {year,month,day}<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
             <mc-date date='2020-10-01' v-model:value="datech" > </mc-date>
-            datech
             `
           }}
           </code></pre>
@@ -203,20 +220,24 @@
         <mc-text>滑动条</mc-text>
         <mc-articl
           >滑动选择,使用v-model:value绑定值<br />
-          用户选择的结果会保存到绑定的值中 示例
+          用户选择的结果会保存到绑定的值中<br />
+          指定top值来设置选择的值为0~top的小数<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
             <mc-slider v-model:value="sliderch" > </mc-slider>
+
+            <mc-slider :top='1' v-model:value="sliderch" > </mc-slider>
+
             `
           }}
           </code></pre>
         </mc-articl>
-        <mc-middle>
-          <mc-slider v-model:value="sliderch" > </mc-slider>
-          
-        </mc-middle>
-        {{sliderch}}
+          <mc-slider v-model:value="sliderch" > </mc-slider><br />
+
+          <mc-slider :top='1' v-model:value="sliderch2" > </mc-slider>
+        {{sliderch}}<br />
+        {{sliderch2}}
       </mc-page>
 
       
@@ -250,6 +271,7 @@ export default {
       switchch: true,
       numberch: 0,
       sliderch: 0,
+      sliderch2:0,
       datech: "",
     };
   },

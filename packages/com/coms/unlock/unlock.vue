@@ -19,11 +19,18 @@ import setting from '../js/setting'
 export default {
   name: "mc-unlock",
   mixins:[setting],
+  props:['value'],
   data:function(){
       return{
           ifLocked:false
       }
   },
+  emits: {
+    ['update:value']: () => {
+      return true;
+    },
+  },
+
   mounted: function () {
     /*
      * @Descripttion:
@@ -107,7 +114,7 @@ export default {
       bgColor.style.width = "100%";
       bgColor.style.backgroundColor = "lightgreen";
       slider.className = "slider active";
-      $this.$emit('input',true)
+      this.$emit('update:value',true)
     //   icon.className = "iconfont icon-xuanzhong";
       //滑动成功时，移除鼠标按下事件和鼠标移动事件
       $this.ifLocked = true;

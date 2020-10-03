@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 20:06:12
+ * @LastEditTime: 2020-10-03 22:16:34
 -->
 <template>
   <div class="main">
@@ -37,7 +37,7 @@
         <mc-articl
           >标题的格式<br />
           可以设置size 为 small<br />
-          示例
+          可以设置width,height<br />
 
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
@@ -59,7 +59,7 @@
 
         <mc-articl
           >链接的格式<br />
-          可以设置type<br />
+          可以设置type为对应的颜色<br />
           示例
 
           <pre v-highlightjs class="html hljs"><code class="html">
@@ -84,7 +84,8 @@
       <mc-page>
         <mc-text>分割线</mc-text>
         <mc-articl>
-          居中框显示一个分割线<br />
+          显示一个分割线<br />
+          设置text可以在分割线中显示文字<br />
           <br />
           示例
           <pre v-highlightjs class="html hljs"><code class="html">
@@ -95,19 +96,21 @@
           }}
           </code></pre>
         </mc-articl>
+        <mc-divider ></mc-divider>
         <mc-divider text="分割线"></mc-divider>
       </mc-page>
 
       <mc-page>
         <mc-text>文字提示</mc-text>
         <mc-articl>
-          显示一个文字提示<br />
-          <br />
-          示例
+          使用mc-tip组件来包裹需要进行提示的组件<br />
+          设置text来指示需要提示的内容<br />
+
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-          <mc-divider text='分割线'></mc-divider>
+          <mc-tip text="补充说明文字提示"><mc-tag>文字提示</mc-tag></mc-tip>
+          <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
             `
           }}
           </code></pre>
@@ -124,13 +127,18 @@
         <mc-text>标签</mc-text>
         <mc-articl>
           显示一个标签<br />
+          设置text来指示标签的内容<br />
+          设置type来指示标签的颜色<br />
+          
           <br />
-          示例
+
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-          <mc-divider text='分割线'></mc-divider>
-            `
+          <mc-tag>标签</mc-tag>
+          <mc-tag type="red">标签二</mc-tag>
+          <mc-tag type="blue">标签三</mc-tag>
+          `
           }}
           </code></pre>
         </mc-articl>

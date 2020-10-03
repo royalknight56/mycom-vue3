@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 15:09:52
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 16:00:16
+ * @LastEditTime: 2020-10-03 19:59:58
 -->
 <template>
-  <div class="mc_slider">
-      <div ref='button' class="mc_slider_button">
+  <div draggable="false" class="mc_slider">
+      <div draggable="false" ref='button' class="mc_slider_button">
       </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ import setting from "../js/setting";
 export default {
   name: "mc-slider",
   mixins: [setting],
-  props:['value'],
+  props:['value','top'],
   data: function () {
     return {
       ifLocked: false,
@@ -30,6 +30,11 @@ export default {
       return true;
     },
   },
+  watch:{
+    value:function(){
+      this.$refs.button.style.left=this.value/this.top*266+4+'px'
+    }
+  },
   mounted: function () {
       var ifdrug=false;
       var $this=this
@@ -40,8 +45,6 @@ export default {
       this.$refs.button.addEventListener('mousedown',function(e){
           start.x=e.pageX;
           start.buttonx=$this.$refs.button.style.left.slice(0,-2);
-        //   console.log(parseInt($this.$refs.button.style.left.slice(0,-2)))
-            // console.log(start.buttonx-start.x+e.pageX);
           ifdrug=true;
       })
       document.addEventListener('mousemove',function(e){
@@ -52,23 +55,39 @@ export default {
               }else{
                 $this.$refs.button.style.left=start.buttonx-start.x+e.pageX+'px'
                 $this.num=parseInt(100*(temp-4)/266);
-                $this.$emit('update:value',$this.num)
+                $this.emit($this.num)
               }
             }
       })
       document.addEventListener('mouseup',function(){
           ifdrug=false;
-          $this.$emit('update:value',$this.num)
+
+          // $this.emit($this.num)
       })
   },
+  methods:{
+    emit:function(num){
+      // this.num=parseFloat(100*(temp-4)/266);
+      if(this.top){
+        num=num/100*this.top
+      }else{
+        //没有定义top
+      }
+      this.$emit('update:value',num)
+    }
+  }
 };
 </script>
 <style scoped>
 .mc_slider{
     position: relative;
-
+    margin: 4px 0;
     width: 300px;
+
     height: 30px;
+
+    top: 50%;
+    
     background-color: rgba(75, 96, 116, 0.747);
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.247);
@@ -78,25 +97,27 @@ export default {
 }
 .mc_slider:hover{
     background-color:rgba(111, 130, 148, 0.747);
+    height: 30px;
 }
-.mc_switch_left{
-    background-color: rgba(255, 102, 102, 0.726)
-}
-.mc_switch_right{
-    background-color: rgba(100, 180, 255, 0.747);
-}
+
 .mc_slider_button{
     position: absolute;
     left: 4px;
     top: 1px;
+
     width: 21px;
     height: 21px;
-    border-radius: 50%;
+    border-radius: 20px;
     background-color: rgb(238, 238, 238);
     border: 3px solid rgba(0, 0, 0, 0.034);
+
+    transform: scale(0.8);
+    transition: transform 0.1s;
+    user-select: none;
 }
 .mc_slider_button:hover{
     background-color: rgb(255, 255, 255);
+    transform: scale(1.1);
 }
 /* .mc_switch_cir_left{
     left: 4px;

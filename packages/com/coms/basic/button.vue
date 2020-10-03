@@ -4,15 +4,13 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:10:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 19:42:57
+ * @LastEditTime: 2020-10-03 17:12:07
 -->
 <template>
-  <div class="outer">
-      
     <div :class="[size ? className[size] : 'small_button',type ? typeName[type] : 'none']" class="mc_button">
       <slot></slot>
     </div>
-  </div>
+
 </template>
 
 <script>

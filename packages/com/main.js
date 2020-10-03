@@ -4,20 +4,28 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 22:51:35
+ * @LastEditTime: 2020-10-03 20:50:36
  */
 import mc_com1 from '../com/coms/unlock/unlock.vue'
 import mc_com2 from '../com/coms/unlock/unlock2.vue'
 
+import mc_right_page from '../com/coms/alert/right_page.vue'
+
+
 import mc_com3 from '../com/coms/useful/tab.vue'
 import mc_com4 from '../com/coms/useful/tabpage.vue'
+import mc_useful_percentbutton from '../com/coms/useful/percentbutton.vue'
+import mc_useful_percentpie from '../com/coms/useful/percentpie.vue'
+import mc_useful_percentring from '../com/coms/useful/percentring.vue'
+
+
 
 import mc_com5 from '../com/coms/layout/middle.vue'
 import mc_com7 from '../com/coms/layout/moretext.vue'
 import mc_com9 from '../com/coms/layout/page.vue'
 import mc_layout_card from '../com/coms/layout/card.vue'
 import mc_layout_collapse from '../com/coms/layout/collapse.vue'
-
+import mc_layout_header from '../com/coms/layout/header.vue'
 
 import mc_com6 from '../com/coms/basic/underline.vue'
 import mc_com8 from '../com/coms/basic/button.vue'
@@ -60,7 +68,12 @@ var components=[
     mc_basic_tag,
     mc_basic_tip,
     mc_layout_card,
-    mc_layout_collapse
+    mc_layout_collapse,
+    mc_right_page,
+    mc_useful_percentbutton,
+    mc_useful_percentpie,
+    mc_useful_percentring,
+    mc_layout_header
 ];
 
 for(let component of components){

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 09:10:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-28 22:17:29
+ * @LastEditTime: 2020-10-03 22:50:08
 -->
 <template>
   <div class="outer">
@@ -34,7 +34,7 @@
 import setting from '../js/setting'
 export default {
   name: "mc-tab",
-  props: ["text"],
+  props: ["text",'value'],
   mixins:[setting],
   data: function () {
     return {
@@ -43,13 +43,20 @@ export default {
       number: 0,
     };
   },
+  emits: {
+    ['update:value']: () => {
+      return true;
+    },
+  },
+
   methods: {
     changeTo: function (num) {
       if (this.current + num >= this.number || this.current + num < 0) {
         this.current;
       } else {
         this.current += num;
-        this.$emit("input", this.current);
+        this.$emit('update:value',this.current)
+
         if (isNaN(parseInt(this.$refs.mc_tab.style.left))) {
           this.$refs.mc_tab.style.left = 0 + "%";
           this.$refs.mc_tab.style.left = -this.current * 100 + "%";

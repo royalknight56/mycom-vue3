@@ -4,14 +4,17 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 22:46:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 23:29:10
+ * @LastEditTime: 2020-10-03 15:56:08
 -->
 <template>
   <div class="mc_collapse">
-    <div @click="show()" class="mc_collapse_top">折叠面板</div>
-    <div :class="ifShow ? 'show' : 'hidden'" class="mc_collapse_in">
-      <slot></slot>
-    </div>
+    <div class="mc_col_top">{{ text.name }}</div>
+    <input type="checkbox" placeholder="Mickey" class="fold-button" />
+    <section>
+      <div class="fold-content">
+        {{ text.text }}
+      </div>
+    </section>
   </div>
 </template>
 
@@ -20,6 +23,14 @@ import setting from "../js/setting";
 export default {
   name: "mc-collapse",
   mixins: [setting],
+  props: {
+    text: {
+      type: Object,
+      default: function () {
+        return { name: "折叠面板", text: "内容为空" };
+      },
+    },
+  },
   data: function () {
     return {
       ifShow: false,
@@ -35,73 +46,58 @@ export default {
 </script>
 <style scoped>
 .mc_collapse {
-    position: relative;
-  width: 100%;
-  height:100px;
-  overflow: hidden;
+  position: relative;
 }
-.mc_collapse_top::selection{
-    display: none;
-}
-.mc_collapse_top {
-    position: absolute;
-  background-color: rgb(255, 255, 255);
+.mc_col_top {
+  position: absolute;
   top: 0;
-  width: 400px;
-  height: 40px;
-
-  /* left: 50%; */
-  /* z-index: 1; */
-  /* transform: translateX(-50%); */
+  z-index: 1;
+  padding: 0 5px;
 }
-.mc_collapse_in {
-    position: absolute;
-  width: 400px;
-  height: min-content;
+.fold-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  top: 0px;
+  /* left: 0; */
+  width: 300px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
 
-  left: 50%;
-  top: 40px;
-
-  transform: translateX(-50%);
-
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(0, 0, 0, 0.048);
+  background: rgba(192, 192, 192, 0.815);
+  outline: none;
+}
+.fold-button:checked {
+  background: rgba(226, 226, 226, 0.432);
+}
+.fold-button:hover {
+  background: rgba(226, 226, 226, 0.836);
+}
+.fold-button + section {
+  position: relative;
+  top: -4px;
   overflow: hidden;
-  border-radius: 6px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  text-align: center;
-  line-height: 60px;
 }
-.show {
-  animation: colltan 0.2s forwards;
-}
-.hidden {
-  animation: collthian 0.2s forwards;
+.fold-button + section > div.fold-content {
+  width: 300px;
+  height: 100px;
+  background: #def;
+  box-sizing: border-box;
+  /* border-radius: 4px; */
+  padding: 0 5px;
+  opacity: 1;
+  overflow: hidden;
+  transition: height 0.3s ease-out, opacity 0.3s ease-out;
+  /* transform: scaleY(1); */
+  /* -moz-transition: height 1s ease-out, opacity 1s ease-out; */
 }
 
-@keyframes colltan {
-  0% {
-    opacity: 0;
-    top: 100px;
-    /* transform: translateX(-50%) translateY(-100%); */
-  }
-  100% {
-    opacity: 1;
-    top: 40px;
-    /* transform: translateX(-50%) translateY(0%); */
-  }
-}
-@keyframes collthian {
-  0% {
-    opacity: 1;
-    top: 40px;
-    /* transform: translateX(-50%) translateY(0%); */
-  }
-  100% {
-    opacity: 0;
-    top: 100px;
-    /* transform: translateX(-50%) translateY(-100%); */
-  }
+.fold-button:checked + section > div.fold-content {
+  
+  opacity: 0;
+  height: 0;
+  /* transform: scaleY(0); */
 }
 </style>
