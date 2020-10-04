@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 09:10:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 09:51:41
+ * @LastEditTime: 2020-10-04 16:19:55
 -->
 <template>
   <div class="outer">
-    <button id="slider-box" @click="ifLocked=!ifLocked">{{text||'显示'}}</button>
+    <button id="slider-box" @click="ifLocked=!ifLocked">{{ifLocked?'隐藏':'显示'}}</button>
     <slot v-if="ifLocked"></slot>
   </div>
 </template>

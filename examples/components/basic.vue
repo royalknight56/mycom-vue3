@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 22:16:34
+ * @LastEditTime: 2020-10-04 17:06:00
 -->
 <template>
   <div class="main">
@@ -145,6 +145,7 @@
         <mc-tag>标签</mc-tag>
         <mc-tag type="red">标签二</mc-tag>
         <mc-tag type="blue">标签三</mc-tag>
+        <mc-tag type="black">标签四</mc-tag>
       </mc-page>
     </div>
   </div>

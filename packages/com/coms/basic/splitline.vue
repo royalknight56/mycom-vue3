@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:37:30
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 22:47:28
+ * @LastEditTime: 2020-10-04 17:03:10
 -->
 <template>
       <div class="mc_divider">
@@ -42,6 +42,8 @@ export default {
 }
 .mc_divder_text{
     background-color: black;
+    padding:0 4px;
     color: white;
+    user-select: none;
 }
 </style>

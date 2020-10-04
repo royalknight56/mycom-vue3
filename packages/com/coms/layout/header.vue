@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 20:49:17
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 21:31:44
+ * @LastEditTime: 2020-10-04 10:40:17
 -->
 <template>
   <div
@@ -13,7 +13,12 @@
   >
     <div class="mc_header_in">
       <div class="mc_header_for">
-        <div @click="routeTo(item.path)" v-for="(item, index) in menu" :key="index" class="mc_header_item">
+        <div
+          @click="routeTo(item.path)"
+          v-for="(item, index) in menu"
+          :key="index"
+          class="mc_header_item"
+        >
           {{ item.name }}
         </div>
       </div>
@@ -31,27 +36,39 @@ export default {
   data: function () {
     return {
       hidden: false,
+      startY: 0,
     };
   },
   methods: {
-      routeTo:function(path){
-          document.location.hash=path
-      },
+    routeTo: function (path) {
+      document.location.hash = path;
+    },
     lis: function (e) {
       if (e.deltaY > 0) {
-        //
-        this.hidden=true
-
-      }else{
-          this.hidden=false
+        this.hidden = true;
+      } else {
+        this.hidden = false;
       }
+    },
+    touch: function (e) {
+      if (e.touches[0].pageY -this.startY> 0) {
+        this.hidden = false;
+      } else {
+        this.hidden = true;
+      }
+      this.startY=e.touches[0].pageY
     },
   },
   mounted: function () {
+    // document.addEventListener("touchstart", this.touch);
+    document.addEventListener("touchmove", this.touch);
     document.addEventListener("mousewheel", this.lis);
   },
   unmounted: function () {
-    document.removeEventListener("mousewheel",this.lis);
+
+    document.removeEventListener("touchmove", this.touch);
+    document.removeEventListener("mousewheel", this.lis);
+    
   },
 };
 </script>
@@ -89,14 +106,14 @@ export default {
   flex-direction: row;
   justify-content: space-around;
 }
-.mc_header_item{
-    transition: all 0.1s;
-    cursor: pointer;
-    width: 80px;
-    height: 100%;
-    line-height: 40px;
+.mc_header_item {
+  transition: all 0.1s;
+  cursor: pointer;
+  width: 80px;
+  height: 100%;
+  line-height: 40px;
 }
-.mc_header_item:hover{
-    background-color: rgba(255, 255, 255, 0.589);
+.mc_header_item:hover {
+  background-color: rgba(255, 255, 255, 0.589);
 }
 </style>

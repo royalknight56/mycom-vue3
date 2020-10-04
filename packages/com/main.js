@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 20:50:36
+ * @LastEditTime: 2020-10-04 10:57:03
  */
 import mc_com1 from '../com/coms/unlock/unlock.vue'
 import mc_com2 from '../com/coms/unlock/unlock2.vue'
@@ -17,7 +17,7 @@ import mc_com4 from '../com/coms/useful/tabpage.vue'
 import mc_useful_percentbutton from '../com/coms/useful/percentbutton.vue'
 import mc_useful_percentpie from '../com/coms/useful/percentpie.vue'
 import mc_useful_percentring from '../com/coms/useful/percentring.vue'
-
+import mc_useful_dropdown from '../com/coms/useful/dropdown.vue'
 
 
 import mc_com5 from '../com/coms/layout/middle.vue'
@@ -73,7 +73,8 @@ var components=[
     mc_useful_percentbutton,
     mc_useful_percentpie,
     mc_useful_percentring,
-    mc_layout_header
+    mc_layout_header,
+    mc_useful_dropdown
 ];
 
 for(let component of components){

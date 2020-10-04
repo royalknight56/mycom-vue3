@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 19:29:40
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 19:35:38
+ * @LastEditTime: 2020-10-04 17:06:14
 -->
 
 <template>
@@ -43,15 +43,21 @@ export default {
   font-size: 15px;
   font-weight: 600;
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(0, 0, 0, 0.144);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* border-radius: 4px; */
   padding: 4px;
-  color: rgba(0, 0, 0, 0.664);
+  color: rgba(0, 0, 0, 0.8);
   margin: 5px 0px;
 }
 .mc_tag:hover {
   /* border-bottom: 1px solid rgba(138, 138, 138, 0.781); */
 }
+.black{
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+}
+
+
 .red{
     background-color: rgb(255, 163, 163);
     color: rgb(255, 255, 255);

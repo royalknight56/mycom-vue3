@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 22:53:57
+ * @LastEditTime: 2020-10-04 13:11:37
 -->
 <template>
   <div class="main">
@@ -151,6 +151,30 @@
         </mc-percent-ring>
         <mc-slider :top="1" v-model:value="ctrlloading"></mc-slider>
       </mc-page>
+
+      <mc-page>
+        <mc-text>下拉刷新</mc-text>
+        <mc-articl
+          >在顶部会出现检测区域<br />
+          当用户从顶部拉到鼠标或手指向下时<br />
+          出现刷新指示圆圈,<br />
+          当下拉到一定位置时,<br />
+          松开事件会触发refresh<br />
+
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+            <mc-dropdown @refresh='refreshdemo()'></mc-dropdown>
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+
+        <mc-unlock2 width="50%">
+          <mc-dropdown @refresh='refreshdemo()'></mc-dropdown>
+        </mc-unlock2>
+      </mc-page>
+
     </div>
   </div>
 </template>
@@ -180,6 +204,11 @@ export default {
       this.loading = this.loading % 1;
     }, 100);
   },
+  methods:{
+    refreshdemo:function(){
+      this.$top_alert('刷新触发')
+    }
+  }
 };
 </script>
 

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:09:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 21:56:28
+ * @LastEditTime: 2020-10-04 17:04:48
 -->
 # mycom-vue3
 
@@ -49,13 +49,35 @@ mc-tab-page表示轮播图单页
 
 ```html
 
-<mc-tab v-model="test" height="200px" width="50%">
+<mc-tab v-model:value="test" height="200px" width="50%">
     <mc-tab-page>1</mc-tab-page>
     <mc-tab-page>2</mc-tab-page>
     <mc-tab-page>4</mc-tab-page>
 </mc-tab>
 
 ```
+
+
+## 1005版本更新
+
+
+### 视觉效果风格统一
+
+
+
+暂定视效为
+
+无边框radius
+
+灰border
+
+border: 1px solid rgba(0, 0, 0, 0.2);
+
+color: rgba(0, 0, 0, 0.8);
+
+
+矩形,黑白主体
+
 
 
 
