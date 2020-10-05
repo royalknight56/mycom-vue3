@@ -4,16 +4,17 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 16:00:25
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 17:18:15
+ * @LastEditTime: 2020-10-05 14:56:41
 -->
 <template>
   <div class="mc_right_alert_outer">
     <div
       v-for="(item, index) in rightalert"
-      :key="index"
+      :key="item"
       class="mc_rightp_alert_item"
+      
     >
-      <div v-if="item.ifShow" class="mc_right_alert">
+      <div v-if="item.ifShow" :class="item.ifhidden?'mc_rightp_alert_item_close':''" class="mc_right_alert">
         {{ item.message }}
       </div>
       <div @click="hidden(index)" class="mc_right_alert_close">×</div>
@@ -40,7 +41,10 @@ export default {
   methods: {
     
     hidden(index) {
-      this.rightalert.splice(index, 1);
+      this.rightalert[index].ifhidden=true
+      setTimeout(() => {
+          this.rightalert.splice(index, 1);
+      }, 200);
     },
     show(opt) {
       this.rightalert.push({
@@ -57,7 +61,9 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
+
 .mc_right_alert_outer {
   position: fixed;
   right: 10px;
@@ -70,16 +76,22 @@ export default {
   position: relative;
 }
 .mc_right_alert {
+  color: $whitecolor;
   width: 200px;
   height: 40px;
   padding: 6px;
   margin: 10px 0;
-  background-color: rgba(159, 217, 255, 0.822);
-  border: 1px solid black;
-  border-radius: 6px;
+  background-color: $hoverblackcolor;
+  border: $borderstyle ;
+
   text-align: center;
   overflow: hidden;
   animation: topalertan 0.2s;
+  transition: all 0.2s;
+}
+.mc_rightp_alert_item_close{
+  opacity: 0;
+    transform: translateX(100%);
 }
 .mc_right_alert_close {
   color: white;
@@ -91,6 +103,7 @@ export default {
   height: 23px;
   line-height: 20px;
 
+  user-select: none;
   font-weight: 600;
   font-size: 20px;
   transform: rotateZ(0deg);
@@ -101,7 +114,7 @@ export default {
   cursor: pointer;
 }
 .mc_right_alert_close:hover {
-  transform: rotateZ(180deg);
+  transform: rotateZ(90deg);
 }
 @keyframes topalertan {
   0% {

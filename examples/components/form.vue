@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 22:57:12
+ * @LastEditTime: 2020-10-05 14:23:33
 -->
 <template>
   <div class="main">
@@ -240,6 +240,23 @@
         {{sliderch2}}
       </mc-page>
 
+
+<mc-page>
+        <mc-text>表格</mc-text>
+        <mc-articl
+          >通过prop来绑定表格属性值<br>
+          通过v-model:value来绑定表格内容<br>
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+            <mc-table :prop='tableCol' v-model:value="tableData" > </mc-table>
+
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+          <mc-table :prop='tableCol' v-model:value="tableData" > </mc-table>
+      </mc-page>  
       
     </div>
   </div>
@@ -273,6 +290,8 @@ export default {
       sliderch: 0,
       sliderch2:0,
       datech: "",
+      tableData:[['24','学生','1145'],['18','工作','14'],['6','在家','19']],
+      tableCol:['年龄','职业','编号']
     };
   },
 

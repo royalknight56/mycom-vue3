@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:04:12
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 15:56:57
+ * @LastEditTime: 2020-10-04 17:10:19
 -->
 <template>
     <div class="mc_input">
@@ -46,10 +46,10 @@ export default {
 .mc_input_input{
     padding: 6px;
     border: 1px solid rgba(0, 0, 0, 0.233);
-    border-radius: 4px;
+    border-radius:0;
     outline: none;
 }
 .mc_input_input:hover{
-    background-color: aliceblue;
+    background-color: rgba(80, 80, 80, 0.08);
 }
 </style>

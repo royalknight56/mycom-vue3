@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 12:57:42
+ * @LastEditTime: 2020-10-04 19:18:55
 -->
 <template>
   <div @click="chose()" class="mc_checkbox">
@@ -51,7 +51,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_checkbox {
   position: relative;
   width: 100%;
@@ -69,7 +70,7 @@ export default {
   position: relative;
   width: 16px;
   height: 16px;
-  background-color: rgba(127, 193, 255, 0.521);
+  background-color: $black;
   margin: 0 4px;
 }
 .mc_checkbox_cir_cen {
@@ -79,7 +80,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: $white;
   animation: mc_radio_cir_cenan 0.2s;
 }
 @keyframes mc_radio_cir_cenan {

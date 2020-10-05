@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 20:23:10
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 20:46:06
+ * @LastEditTime: 2020-10-04 20:33:10
 -->
 <template>
   <div v-if="alertShow" class="mc_alert_basic">
@@ -55,7 +55,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_alert_basic {
   position: fixed;
 
@@ -68,9 +69,9 @@ export default {
   transform: translateY(-50%) translateX(-50%);
 
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(0, 0, 0, 0.048);
+  border: $borderstyle;
   overflow: hidden;
-  border-radius: 6px;
+
   text-align: center;
   line-height: 60px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.192);
@@ -84,15 +85,16 @@ export default {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: rgb(122, 202, 255);
-  border-bottom: 1px solid black;
+  background-color: $black ;
+  color: $whitecolor ;
+  // border-bottom: 1px solid black;
 }
 .mc_alert_text {
   position: absolute;
   top: 50px;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: $white;
 }
 
 @keyframes topalertan {
@@ -116,13 +118,27 @@ export default {
   height: 40px;
   text-align: center;
   line-height: 40px;
-  background-color: rgb(136, 211, 255);
+  border: $borderstyle;
   cursor: pointer;
+  transition:$alltransition;
+}
+.mc_alert_button_res{
+  color:$black ;
+  background-color: $whitecolor ;
+}
+.mc_alert_button_res:hover{
+  color:$white ;
+  background-color: $black ;
 }
 .mc_alert_button_rej{
-  background-color: rgb(255, 154, 136);
+  color:$white ;
+  background-color: $black;
 }
-.mc_alert_button:hover{
-  filter: brightness(110%);
-}
+// .mc_alert_button_rej:hover{
+//   color:$black ;
+//   background-color: $whitecolor ;
+// }
+// .mc_alert_button:hover{
+//   filter: brightness(110%);
+// }
 </style>

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 12:50:50
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 15:57:08
+ * @LastEditTime: 2020-10-04 17:23:48
 -->
 <template>
   <div class="mc_select">
@@ -79,12 +79,7 @@ export default {
   width: fit-content;
   height: 100%;
   white-space: nowrap;
-  
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center; */
+
   cursor: pointer;
 }
 .mc_select_input {
@@ -93,16 +88,17 @@ export default {
   overflow: hidden;
   height: 40px;
   line-height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.233);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: black;
+
   outline: none;
   transition: all 0.2s;
 }
 
-.mc_select_input:focus {
-  border: 1px solid rgba(132, 220, 255, 0.233);
-}
 .mc_select_input:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
   border: 1px solid rgba(49, 149, 196, 0.555);
 }
 .mc_select_menu {

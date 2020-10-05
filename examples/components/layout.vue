@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 22:47:33
+ * @LastEditTime: 2020-10-05 15:44:29
 -->
 <template>
   <div class="main">
@@ -143,13 +143,15 @@
             `
         <mc-collapse :text="{name:'折叠面板',text:'面板内容'}">
         </mc-collapse>
+        <mc-collapse width='400px' :text="{name:'折叠面板',text:'面板内容'}">
+        </mc-collapse>
             `
           }}
           </code></pre>
         </mc-articl>
         <mc-collapse :text="{name:'折叠面板',text:'面板内容'}">
         </mc-collapse>
-        <mc-collapse :text="{name:'折叠面板',text:'面板内容'}">
+        <mc-collapse width='400px' :text="{name:'折叠面板',text:'面板内容'}">
         </mc-collapse>
 
       </mc-page>

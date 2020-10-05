@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 14:44:26
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 15:56:44
+ * @LastEditTime: 2020-10-04 19:20:12
 -->
 <template>
     <div class="mc_number">
@@ -47,11 +47,12 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_number{
     width: 150px;
     height: 40px;
-    background-color: rgb(224, 224, 224);
+    background-color: $whitecolor;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,13 +62,13 @@ export default {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    color: white;
+    color: $white;
     font-weight: 600;
-    background-color: rgba(133, 133, 133, 0.527);
+    background-color:$black;
     cursor: pointer;
 }
 .mc_number_button:hover{
-    background-color: rgb(207, 207, 207);
+    background-color: $hoverblackcolor;
 }
 .mc_number_button::selection{
     background: none;

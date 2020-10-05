@@ -4,8 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 10:57:03
+ * @LastEditTime: 2020-10-05 10:30:49
  */
+
+import scss from '../com/coms/header.vue'
+
 import mc_com1 from '../com/coms/unlock/unlock.vue'
 import mc_com2 from '../com/coms/unlock/unlock2.vue'
 
@@ -44,7 +47,11 @@ import mc_com17 from '../com/coms/form/number.vue'
 import mc_com18 from '../com/coms/form/slider.vue'
 import mc_com19 from '../com/coms/form/date.vue'
 
+
+import mc_data_table from '../com/coms/data/table.vue'
+
 var components=[
+    scss,
     mc_com1,
     mc_com2,
     mc_com3,
@@ -74,7 +81,8 @@ var components=[
     mc_useful_percentpie,
     mc_useful_percentring,
     mc_layout_header,
-    mc_useful_dropdown
+    mc_useful_dropdown,
+    mc_data_table
 ];
 
 for(let component of components){

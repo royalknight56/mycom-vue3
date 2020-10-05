@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:10:01
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 21:44:00
+ * @LastEditTime: 2020-10-05 15:57:34
 -->
 <template>
   <div class="hello">
@@ -75,28 +75,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.test_tab {
-  background-color: antiquewhite;
-}
-.hello {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-}
-.header {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 50px;
-  padding: 0 10px 0 30px;
-  /* border-bottom: 3px solid black; */
-  box-shadow: inset 0px -3px 2px black;
-}
-.main {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-}
 
 </style>

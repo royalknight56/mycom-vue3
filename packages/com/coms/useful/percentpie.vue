@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 18:24:07
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 20:07:06
+ * @LastEditTime: 2020-10-04 20:43:53
 -->
 <template>
   <div class="mc_percent_pie">
@@ -58,14 +58,16 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
+
 .mc_percent_pie {
   z-index: 0;
   position: relative;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgb(228, 228, 228);
+  background-color: $middlecolor;
   transition: transform 0.2s;
   transform: scale(1);
   /* background-image: linear-gradient(to right, #655 50%, #655 0); */
@@ -82,7 +84,7 @@ export default {
   margin-left: 50%;
   height: 100%;
   border-radius: 0 100% 100% 0/50%;
-  background-color: rgb(127, 186, 253);
+  background-color: $pblack ;
   transform-origin: left;
   transform: rotate(0turn);
   z-index: 1;
@@ -96,7 +98,7 @@ export default {
   margin-left: 50%;
   height: 100%;
   border-radius: 0 100% 100% 0/50%;
-  background-color: rgb(127, 186, 253);
+  background-color: $pblack ;
   transform-origin: left;
 
   transform: rotate(0.5turn);

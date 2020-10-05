@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 12:58:00
+ * @LastEditTime: 2020-10-04 18:00:02
 -->
 <template>
   <div @click="chose()" class="mc_radio">
@@ -42,7 +42,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_radio {
   position: relative;
   width: 100%;
@@ -60,7 +61,8 @@ export default {
   position: relative;
   width: 16px;
   height: 16px;
-  background-color: rgba(127, 193, 255, 0.521);
+  background-color: $black;
+
   margin: 0 4px;
   border-radius: 50%;
 }
@@ -71,7 +73,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: $white;
   border-radius: 50%;
   animation: mc_radio_cir_cenan 0.2s;
 }
@@ -85,4 +87,7 @@ export default {
     height: 10px;
   }
 }
+</style>
+<style scoped>
+
 </style>

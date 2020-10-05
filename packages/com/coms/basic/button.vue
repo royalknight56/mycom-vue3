@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:10:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 17:12:07
+ * @LastEditTime: 2020-10-04 19:47:01
 -->
 <template>
     <div :class="[size ? className[size] : 'small_button',type ? typeName[type] : 'none']" class="mc_button">
@@ -33,24 +33,27 @@ export default {
   mounted: function () {},
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_button {
   height: 100%;
   position: relative;
   margin: 10px auto;
   margin-top: 10px;
-  
-  border: 1px solid rgba(80, 80, 80, 0.486);
+  user-select: none;
+  /* border: 1px solid rgba(80, 80, 80, 0.486); */
+  border: $borderstyle ;
+  color:$whitecolor;
+  transition: all 0.2s;
   text-align: center;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .mc_button:hover{
-    background-color: aliceblue;
+    background-color:$whitecolor;
+    color: $black ;
 }
-.mc_button::selection{
-  display: none;
-}
+
 .small_button {
   padding: 5px;
   width: 100px;
@@ -66,6 +69,6 @@ export default {
     background-color:rgba(61, 140, 206, 0.555);
 }
 .none{
-    background-color: #e8e8e8;
+    background-color: $black;
 }
 </style>

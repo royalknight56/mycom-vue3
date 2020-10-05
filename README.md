@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:09:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 17:04:48
+ * @LastEditTime: 2020-10-04 17:58:05
 -->
 # mycom-vue3
 
@@ -64,14 +64,29 @@ mc-tab-page表示轮播图单页
 ### 视觉效果风格统一
 
 
+@import  '../../../scssvar.scss';
 
 暂定视效为
 
 无边框radius
 
-灰border
 
+黑色一致性背景色
+background-color: black;
+
+通用转换动画
+transition: all 0.2s;
+
+
+灰border
 border: 1px solid rgba(0, 0, 0, 0.2);
+
+hover待选择背景色
+灰
+background-color: rgba(80, 80, 80, 0.08);
+白
+background-color: rgba(255, 255, 255, 0.8);
+
 
 color: rgba(0, 0, 0, 0.8);
 

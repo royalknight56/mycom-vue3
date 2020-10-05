@@ -144,7 +144,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
 .mc_date {
   position: relative;
   width: fit-content;
@@ -164,17 +165,17 @@ export default {
   overflow: hidden;
   height: 40px;
   line-height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.233);
-  border-radius: 4px;
+  border: $borderstyle;
+
   outline: none;
   transition: all 0.2s;
 }
 
 .mc_date_input:focus {
-  border: 1px solid rgba(132, 220, 255, 0.233);
+  border: $borderstyle;
 }
 .mc_date_input:hover {
-  border: 1px solid rgba(49, 149, 196, 0.555);
+  border: $borderstyle;
 }
 
 .date_row {
@@ -190,16 +191,16 @@ export default {
   height: 28px;
   text-align: center;
   line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.123);
+  border: $borderstyle;
 }
 .date_item:hover{
-    background-color: aliceblue;
+    background-color: $hoverblackcolor;
 }
 .mc_date_menu {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(252, 252, 252);
+  background-color: $whitecolor;
   animation: mc_radio_cir_cenan 0.2s;
 }
 @keyframes mc_radio_cir_cenan {
@@ -219,13 +220,13 @@ export default {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  color: white;
+  color: $white;
   font-weight: 600;
-  background-color: rgba(133, 133, 133, 0.527);
+  background-color: $black;
   cursor: pointer;
 }
 .mc_date_input_button:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: $hoverblackcolor;
 }
 .mc_date_input_button::selection {
   background: none;

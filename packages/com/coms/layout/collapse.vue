@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 22:46:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 15:56:08
+ * @LastEditTime: 2020-10-05 15:45:27
 -->
 <template>
   <div class="mc_collapse">
@@ -44,12 +44,18 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import  '../../../scssvar.scss';
+
 .mc_collapse {
   position: relative;
+  width: 300px;
 }
 .mc_col_top {
   position: absolute;
+  user-select: none;
+  pointer-events: none;
+  color:$white;
   top: 0;
   z-index: 1;
   padding: 0 5px;
@@ -61,19 +67,21 @@ export default {
   position: relative;
   top: 0px;
   /* left: 0; */
-  width: 300px;
+  width: 100%;
   height: 20px;
   margin: 0;
-  padding: 0;
-
-  background: rgba(192, 192, 192, 0.815);
+  padding: 1px;
+  background: $black;
+  color:$white;
+  border-radius: 0;
+  cursor: pointer;
   outline: none;
 }
 .fold-button:checked {
-  background: rgba(226, 226, 226, 0.432);
+  background: $pblack;
 }
 .fold-button:hover {
-  background: rgba(226, 226, 226, 0.836);
+  background:$black;
 }
 .fold-button + section {
   position: relative;
@@ -81,11 +89,11 @@ export default {
   overflow: hidden;
 }
 .fold-button + section > div.fold-content {
-  width: 300px;
+  width:100%;
   height: 100px;
-  background: #def;
+  background: $middlecolor;
   box-sizing: border-box;
-  /* border-radius: 4px; */
+
   padding: 0 5px;
   opacity: 1;
   overflow: hidden;
