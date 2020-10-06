@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 14:23:33
+ * @LastEditTime: 2020-10-06 18:16:03
 -->
 <template>
   <div class="main">
@@ -106,6 +106,46 @@
         </mc-middle>
         
         {{ selectch }}
+      </mc-page>
+      
+      <mc-page>
+        <mc-text>级联选择器</mc-text>
+        <mc-articl>
+          1006新增<br>
+          通过v-model:value绑定用户选择的值<br>
+          通过label传入选项<br>
+          传入格式为一个数组,数组中每个对象为{label,value}<br>
+          label代表选择器中的指示值<br>
+          value代表选择后代表的值,如果是一个数组,则代表二级菜单<br>
+           可以设置type为all,这样用户点击非叶子节点时,会返回当前的value值<br>
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            
+            `
+            [
+              {
+                label: '草莓'
+                value: '1'
+              },
+              {
+                label: '香蕉'
+                value: [
+                        {
+                          label: '芝麻香蕉'
+                          value: 2
+                        },
+                        ]
+              },
+            ]
+            <mc-level-select  v-model:value="selectch" :label="levelselectlabel"> </mc-level-select>
+
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+          <mc-level-select  v-model:value="selectch" :label="levelselectlabel"> </mc-level-select>
+          {{selectch}}
+      
       </mc-page>
       
       <mc-page>
@@ -239,9 +279,7 @@
         {{sliderch}}<br />
         {{sliderch2}}
       </mc-page>
-
-
-<mc-page>
+      <mc-page>
         <mc-text>表格</mc-text>
         <mc-articl
           >通过prop来绑定表格属性值<br>
@@ -257,7 +295,7 @@
         </mc-articl>
           <mc-table :prop='tableCol' v-model:value="tableData" > </mc-table>
       </mc-page>  
-      
+
     </div>
   </div>
 </template>
@@ -285,13 +323,57 @@ export default {
         { label: "草莓", value: "a" },
         { label: "香蕉", value: "b" },
       ],
+      levelselectlabel: [
+        {
+          label: "草莓",
+          value: [
+            {
+              label: "奶油草莓",
+              value: [
+                {
+                  label: "大奶油草莓",
+                  value: [
+                    {
+                      label: "大甜奶油草莓",
+                      value: [
+                        {
+                          label: "大圆甜奶油草莓",
+                          value: [
+                            { label: "精品大圆甜奶油草莓", value: "11" },
+                            { label: "普通大圆甜奶油草莓", value: "10" },
+                          ],
+                        },
+                        { label: "大尖甜奶油草莓", value: "9" },
+                      ],
+                    },
+                    { label: "大酸奶油草莓", value: "8" },
+                  ],
+                },
+                { label: "小奶油草莓", value: "6" },
+              ],
+            },
+            { label: "小草莓", value: "2" },
+          ],
+        },
+        {
+          label: "香蕉",
+          value: [
+            { label: "芝麻香蕉", value: "3" },
+            { label: "大香蕉", value: "4" },
+          ],
+        },
+      ],
       switchch: true,
       numberch: 0,
       sliderch: 0,
-      sliderch2:0,
+      sliderch2: 0,
       datech: "",
-      tableData:[['24','学生','1145'],['18','工作','14'],['6','在家','19']],
-      tableCol:['年龄','职业','编号']
+      tableData: [
+        ["24", "学生", "1145"],
+        ["18", "工作", "14"],
+        ["6", "在家", "19"],
+      ],
+      tableCol: ["年龄", "职业", "编号"],
     };
   },
 

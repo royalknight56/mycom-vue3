@@ -8,7 +8,6 @@
 
 ### 标题
 
-
 ```html
 <mc-text width="200px">这是一个大标题</mc-text>
 <mc-text width="200px" size="small">这是一个标题</mc-text>
@@ -78,6 +77,32 @@ selectlabel: [
 ```html
 <mc-select width="100px" v-model:value="selectch" :label="selectlabel">
 </mc-select>
+```
+
+### 级联选择器
+
+```js
+
+selectlabel:[
+              {
+                label: '草莓'
+                value: '1'
+              },
+              {
+                label: '香蕉'
+                value: [
+                        {
+                          label: '芝麻香蕉'
+                          value: 2
+                        },
+                        ]
+              },
+            ]
+```
+
+```html
+<mc-level-select v-model:value="selectch" :label="levelselectlabel">
+</mc-level-select>
 ```
 
 ### 开关

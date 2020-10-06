@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 10:30:49
+ * @LastEditTime: 2020-10-06 18:30:32
  */
 
 import scss from '../com/coms/header.vue'
@@ -21,7 +21,7 @@ import mc_useful_percentbutton from '../com/coms/useful/percentbutton.vue'
 import mc_useful_percentpie from '../com/coms/useful/percentpie.vue'
 import mc_useful_percentring from '../com/coms/useful/percentring.vue'
 import mc_useful_dropdown from '../com/coms/useful/dropdown.vue'
-
+import mc_useful_totop from '../com/coms/useful/totop.vue'
 
 import mc_com5 from '../com/coms/layout/middle.vue'
 import mc_com7 from '../com/coms/layout/moretext.vue'
@@ -46,6 +46,8 @@ import mc_com16 from '../com/coms/form/switch.vue'
 import mc_com17 from '../com/coms/form/number.vue'
 import mc_com18 from '../com/coms/form/slider.vue'
 import mc_com19 from '../com/coms/form/date.vue'
+
+import mc_form_levelselect from '../com/coms/form/levelselect.vue'
 
 
 import mc_data_table from '../com/coms/data/table.vue'
@@ -82,7 +84,9 @@ var components=[
     mc_useful_percentring,
     mc_layout_header,
     mc_useful_dropdown,
-    mc_data_table
+    mc_data_table,
+    mc_form_levelselect,
+    mc_useful_totop
 ];
 
 for(let component of components){
