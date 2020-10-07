@@ -75,23 +75,3 @@ export function mixin(Vuein) {
         }
     })
 }
-// export default{
-//     date:function(){
-//         return{
-//             mc_alert:[]
-//         }
-//     },
-//     methods:{
-//         $alert:function(){
-//             console.log(this.$parent)
-//             var myAfter = this.$root.extend({
-//                 template:'<p>after</p>'
-//               })
-
-//             // this.$root.extend(alert)
-//             new myAfter().$mount().$after('#app')
-//             // console.log(this.$el.appendChild(alert))
-//             console.log('alert')
-//         }
-//     }
-// }

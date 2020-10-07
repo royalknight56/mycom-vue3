@@ -52,11 +52,6 @@ export default {
         ifShow: true,
       });
 
-      // setTimeout(() => {
-      //     // console.log(index-1)
-      //     this.rightalert.splice(0,1)
-      // //   this.alertShow = false;
-      // }, 4000);
     },
   },
 };

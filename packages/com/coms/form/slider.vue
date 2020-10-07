@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 15:09:52
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 15:35:52
+ * @LastEditTime: 2020-10-07 21:00:41
 -->
 <template>
   <div draggable="false" class="mc_slider">
@@ -18,7 +18,16 @@ import setting from "../js/setting";
 export default {
   name: "mc-slider",
   mixins: [setting],
-  props:['value','top'],
+  // props:['value','top'],
+  props:{
+    value:{
+      type:Number
+    },
+    top:{
+      default:100,
+      type:Number
+    }
+  },
   data: function () {
     return {
       ifLocked: false,
@@ -39,8 +48,7 @@ export default {
     }
   },
   mounted: function () {
-    // console.log(navigator.platform)
-      // var ifdrug=false;
+    this.$refs.button.style.left=this.value/this.top*(this.bright-this.bleft-1)+this.bleft+'px'
       var left = this.bleft;
       var right= this.bright;
       var $this=this
@@ -89,15 +97,17 @@ export default {
       document.addEventListener('mouseup',function(){
           $this.ifdrug=false;
       })
+
   },
   methods:{
     emit:function(num){
       // this.num=parseFloat(100*(temp-4)/266);
       if(this.top){
-        num=num/100*this.top
+        num=num/(100*(1/this.top))
       }else{
         //没有定义top
       }
+      
       this.$emit('update:value',num)
     }
   }

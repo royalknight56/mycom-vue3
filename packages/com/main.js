@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-06 18:30:32
+ * @LastEditTime: 2020-10-07 17:50:08
  */
 
 import scss from '../com/coms/header.vue'
@@ -46,6 +46,7 @@ import mc_com16 from '../com/coms/form/switch.vue'
 import mc_com17 from '../com/coms/form/number.vue'
 import mc_com18 from '../com/coms/form/slider.vue'
 import mc_com19 from '../com/coms/form/date.vue'
+import mc_form_rate from '../com/coms/form/rate.vue'
 
 import mc_form_levelselect from '../com/coms/form/levelselect.vue'
 
@@ -86,7 +87,8 @@ var components=[
     mc_useful_dropdown,
     mc_data_table,
     mc_form_levelselect,
-    mc_useful_totop
+    mc_useful_totop,
+    mc_form_rate
 ];
 
 for(let component of components){

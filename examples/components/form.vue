@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-06 18:16:03
+ * @LastEditTime: 2020-10-07 20:50:36
 -->
 <template>
   <div class="main">
@@ -143,6 +143,7 @@
           }}
           </code></pre>
         </mc-articl>
+        <mc-level-select  v-model:value="selectch" :label="levelselectlabel"> </mc-level-select>
           <mc-level-select  v-model:value="selectch" :label="levelselectlabel"> </mc-level-select>
           {{selectch}}
       
@@ -163,7 +164,8 @@
           </code></pre>
         </mc-articl>
         <mc-middle>
-          <mc-switch v-model:value="switchch" label="1"> 开关 </mc-switch>
+          <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
+          <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
         </mc-middle>
         {{switchch}}
         
@@ -234,6 +236,7 @@
           </code></pre>
         </mc-articl>
         <mc-number v-model:value="numberch" > </mc-number>
+        <mc-number width='300px' v-model:value="numberch" > </mc-number>
         {{numberch}}
       </mc-page>
 
@@ -273,12 +276,34 @@
           }}
           </code></pre>
         </mc-articl>
-          <mc-slider v-model:value="sliderch" > </mc-slider><br />
-
+          <mc-slider v-model:value="sliderch" > </mc-slider>
+          <mc-slider v-model:value="sliderch" > </mc-slider>
+          <mc-slider :top='1' v-model:value="sliderch2" > </mc-slider>
           <mc-slider :top='1' v-model:value="sliderch2" > </mc-slider>
         {{sliderch}}<br />
         {{sliderch2}}
       </mc-page>
+
+      <mc-page>
+        <mc-text>评分</mc-text>
+        <mc-articl
+          >待完善的文档
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+          <mc-rate width='200px' v-model:value="rateerch"> </mc-rate>
+          <mc-rate width='300px' v-model:value="rateerch" :top='9'> </mc-rate>
+
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+          <mc-rate width='200px' v-model:value="rateerch"> </mc-rate>
+          <mc-rate width='300px' v-model:value="rateerch" :top='9'> </mc-rate>
+          {{rateerch}}
+      </mc-page>
+
+
       <mc-page>
         <mc-text>表格</mc-text>
         <mc-articl
@@ -314,6 +339,7 @@ export default {
       inputch: "",
       checkch: [],
       checkch2: [],
+      rateerch:3,
       selectch: "",
       selectlabel: [
         { label: "草莓sdasfsda", value: "a" },
@@ -364,8 +390,8 @@ export default {
         },
       ],
       switchch: true,
-      numberch: 0,
-      sliderch: 0,
+      numberch: 3,
+      sliderch: 23,
       sliderch2: 0,
       datech: "",
       tableData: [

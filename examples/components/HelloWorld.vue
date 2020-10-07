@@ -49,7 +49,6 @@ export default {
   },
   methods: {
     changeTo(page){
-      // console.log(page)
       this.$router.push({ path: page.page })
     },
     tpTo(offset) {
@@ -67,7 +66,6 @@ export default {
   },
   watch: {
     iflock: function () {
-      console.log(this.iflock);
     },
   },
 };

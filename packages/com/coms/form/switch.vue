@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 14:15:40
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 18:02:17
+ * @LastEditTime: 2020-10-07 20:37:31
 -->
 <template>
     <div @click="chose" class="mc_switch" :class="ifchose?'mc_switch_right':'mc_switch_left'">
@@ -18,15 +18,20 @@
 </template>
 
 <script>
-import setting from '../js/setting'
+// import setting from '../js/setting'
 export default {
   name: "mc-switch",
-  mixins:[setting],
+//   mixins:[setting],
   props:['value'],
   data:function(){
       return{
           ifchose:false
       }
+  },
+  watch:{
+      value: function () {
+        this.ifchose=this.value
+    },
   },
   emits: {
     ['update:value']: () => {

@@ -34,20 +34,7 @@ export default {
     },
   },
   mounted: function () {
-    // this.$refs.mainin.addEventListener("click", () => {
-    //   this.isInput = true;
-    // });
-    // document.body.addEventListener("click", even);
-    // var $this = this;
-    // function even() {
-    //     console.log($this.isInput);
-    //   if ($this.isInput) {
-    //     //
-    //     $this.isInput = false;
-    //   } else {
-    //       $this.$emit("close");
-    //   }
-    // }
+
   },
   methods: {
     hidden() {
@@ -59,11 +46,6 @@ export default {
         ifShow: true,
       });
 
-      // setTimeout(() => {
-      //     // console.log(index-1)
-      //     this.rightalert.splice(0,1)
-      // //   this.alertShow = false;
-      // }, 4000);
     },
   },
 };

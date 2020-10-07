@@ -135,11 +135,13 @@ export default {
   border: $borderstyle;
 }
 .mc_select_level_menu {
+  z-index: 1;
   position: absolute;
   display: flex;
   flex-direction: row;
 }
 .mc_select_menu {
+  
   width: max-content;
 
   background-color: white;

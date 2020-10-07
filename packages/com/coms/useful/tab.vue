@@ -70,7 +70,7 @@ export default {
     var temp=this.$slots;
     
     let ar = temp.default()
-    // console.log(temp.default());
+
     this.number = ar.length;
     this.$refs.mc_flex.style.width = this.number * 100 + "%";
   },

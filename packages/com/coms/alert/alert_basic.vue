@@ -36,7 +36,7 @@ export default {
 
   },
   beforeUnmount:function(){
-      console.log('sds')
+      
   },
   methods: {
     hidden(){
@@ -44,7 +44,7 @@ export default {
     },
     show(opt) {
       this.message = opt;
-      //   console.log(this.alertShow)
+
       if (this.alertShow) {
         //
       } else {

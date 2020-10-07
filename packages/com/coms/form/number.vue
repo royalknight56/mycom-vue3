@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 14:44:26
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 19:20:12
+ * @LastEditTime: 2020-10-07 20:30:10
 -->
 <template>
     <div class="mc_number">
@@ -30,6 +30,11 @@ export default {
       return{
           num:0,
       }
+  },
+  watch:{
+      value: function () {
+        this.num=this.value
+    },
   },
   emits: {
     ['update:value']: () => {

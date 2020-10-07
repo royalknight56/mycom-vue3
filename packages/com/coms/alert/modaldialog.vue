@@ -37,7 +37,7 @@ export default {
 
   mounted: function () {},
   beforeUnmount: function () {
-    console.log("sds");
+    
   },
   methods: {
 
@@ -45,7 +45,7 @@ export default {
       this.message = opt;
       this.resolve = resolve;
       this.reject = reject;
-      //   console.log(this.alertShow)
+
       if (this.alertShow) {
         //
       } else {

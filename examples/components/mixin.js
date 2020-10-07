@@ -50,7 +50,6 @@ export default{
     },
     watch: {
       iflock: function () {
-        console.log(this.iflock);
       },
     },
   }

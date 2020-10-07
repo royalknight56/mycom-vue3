@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-06 18:25:09
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-06 19:01:17
+ * @LastEditTime: 2020-10-07 21:02:43
 -->
 <template>
       <div @click="totop()" class="mc_totop">
@@ -26,8 +26,7 @@ export default {
   },
   methods:{
       totop(){
-          console.log(this.$root); 
-          
+   
       }
   }
 };
