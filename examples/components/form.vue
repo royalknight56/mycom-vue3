@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-07 20:50:36
+ * @LastEditTime: 2020-10-08 22:19:49
 -->
 <template>
   <div class="main">
@@ -70,7 +70,7 @@
           }}
           </code></pre>
         </mc-articl>
-        <mc-button size="small"> 按钮 </mc-button>
+        <mc-button test  size="small"> 按钮 </mc-button>
         <mc-button size="small" type="red"> 按钮 </mc-button>
         <mc-button size="small" type="blue"> 按钮 </mc-button>
         <mc-button size="large"> 大按钮 </mc-button>
@@ -269,9 +269,7 @@
           {{
             `
             <mc-slider v-model:value="sliderch" > </mc-slider>
-
             <mc-slider :top='1' v-model:value="sliderch" > </mc-slider>
-
             `
           }}
           </code></pre>
@@ -309,17 +307,63 @@
         <mc-articl
           >通过prop来绑定表格属性值<br>
           通过v-model:value来绑定表格内容<br>
+          通过editable来使表格可以编辑<br>
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-            <mc-table :prop='tableCol' v-model:value="tableData" > </mc-table>
+          <mc-table  :prop='tableCol' v-model:value="tableData" > </mc-table>
+          <mc-table width='300px' :prop='tableCol' editable v-model:value="tableData" > </mc-table>
 
             `
           }}
           </code></pre>
         </mc-articl>
-          <mc-table :prop='tableCol' v-model:value="tableData" > </mc-table>
-      </mc-page>  
+          <mc-table  :prop='tableCol' v-model:value="tableData" > </mc-table>
+          <mc-table width='300px' :prop='tableCol' editable v-model:value="tableData" > </mc-table>
+      </mc-page>
+
+      <mc-page>
+        <mc-text>列表</mc-text>
+        <mc-articl
+          >通过v-model:value来绑定列表值<br>
+          通过name来绑定列表头<br>
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+          <mc-list  v-model:value="listData" > </mc-list>
+          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
+ 
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+          <mc-list  v-model:value="listData" > </mc-list>
+          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
+
+      </mc-page> 
+
+      <mc-page>
+        <mc-text>Set结构</mc-text>
+        <mc-articl
+          >待完善的文档
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+          <mc-list  v-model:value="listData" > </mc-list>
+          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
+ 
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+          <mc-list  v-model:value="listData" > </mc-list>
+          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
+          
+      </mc-page> 
 
     </div>
   </div>
@@ -349,6 +393,19 @@ export default {
         { label: "草莓", value: "a" },
         { label: "香蕉", value: "b" },
       ],
+      switchch: true,
+      numberch: 3,
+      sliderch: 23,
+      sliderch2: 0,
+      datech: "",
+      tableData: [
+        ["24", "学生", "1145"],
+        ["18", "工作", "14"],
+        ["6", "在家", "19"],
+      ],
+      tableCol: ["年龄", "职业", "编号"],
+      listData:[89,64,21,18,6],
+
       levelselectlabel: [
         {
           label: "草莓",
@@ -389,17 +446,6 @@ export default {
           ],
         },
       ],
-      switchch: true,
-      numberch: 3,
-      sliderch: 23,
-      sliderch2: 0,
-      datech: "",
-      tableData: [
-        ["24", "学生", "1145"],
-        ["18", "工作", "14"],
-        ["6", "在家", "19"],
-      ],
-      tableCol: ["年龄", "职业", "编号"],
     };
   },
 

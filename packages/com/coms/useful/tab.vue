@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 09:10:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 22:50:08
+ * @LastEditTime: 2020-10-08 10:27:39
 -->
 <template>
   <div class="outer">
@@ -13,7 +13,7 @@
       id="slider-box"
       @click="changeTo(-1)"
     >
-      ←
+      <span class="iconfont">&#xe749;</span>
     </button>
     <div ref="mc_tab" class="mc_tab">
       <div ref="mc_flex" class="mc_flex">
@@ -25,7 +25,7 @@
       id="slider-box"
       @click="changeTo(1)"
     >
-      >
+      <span class="iconfont">&#xe748;</span>
     </button>
   </div>
 </template>

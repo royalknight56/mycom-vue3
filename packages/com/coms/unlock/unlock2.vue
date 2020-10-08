@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 09:10:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 16:19:55
+ * @LastEditTime: 2020-10-08 19:23:20
 -->
 <template>
   <div class="outer">
-    <button id="slider-box" @click="ifLocked=!ifLocked">{{ifLocked?'隐藏':'显示'}}</button>
+    <button id="mc_unlock_button" @click="ifLocked=!ifLocked">{{ifLocked?'隐藏':'显示'}}</button>
     <slot v-if="ifLocked"></slot>
   </div>
 </template>
@@ -29,7 +29,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import "../../../scssvar.scss";
 button{
   outline: none;
 }
@@ -39,14 +40,13 @@ button{
     margin: 10px 0;
     text-align: center;
 }
-#slider-box{
+.mc_unlock_button{
   position: relative;
   width: 100%;
   height: 100%;
-
-
-  background-color: #e8e8e8;
-  border: 1px solid rgba(80, 80, 80, 0.486);
+  background-color: $black;
+  border: $borderstyle;
+  color: $whitecolor;
   /* box-shadow: 1px 1px 5px rgba(0,0,0,0.2); */
 }
 

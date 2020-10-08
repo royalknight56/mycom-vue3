@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-04 10:51:04
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 10:00:46
+ * @LastEditTime: 2020-10-08 09:46:31
 -->
 <template>
   <div class="mc_dropdown_out">
@@ -77,7 +77,7 @@ export default {
           }
           this.$refs.dropcir.style.top = ofy - starty + "px";
           this.$refs.dropcir.style.transform =
-            "rotateZ(" + (-((ofy - starty) * 2) % 360) + "deg)";
+            "rotateZ(" + (-((ofy - starty) * 2) ) + "deg)";
         }
       }
     },
