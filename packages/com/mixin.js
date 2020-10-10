@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 11:00:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-03 20:36:18
+ * @LastEditTime: 2020-10-10 18:47:20
  */
 
 
@@ -39,7 +39,7 @@ export function mixin(Vuein) {
                 }
                 Vuein.alert_app.show(text)
             },
-            $top_alert: function (text) {
+            $top_alert: function (text,timeout) {
                 if (Vuein.top_alert_app) {
                     //
                 } else {
@@ -48,9 +48,9 @@ export function mixin(Vuein) {
                     document.body.appendChild(div);
                     Vuein.top_alert_app=createApp(top_alert).mount('#mctopalert')
                 }
-                Vuein.top_alert_app.show(text)
+                Vuein.top_alert_app.show(text,timeout)
             },
-            $right_alert:function(text){
+            $right_alert:function(text,timeout){
                 if (Vuein.right_alert_app) {
                     //
                 } else {
@@ -59,7 +59,7 @@ export function mixin(Vuein) {
                     document.body.appendChild(div);
                     Vuein.right_alert_app=createApp(right_alert).mount('#mcrightalert')
                 }
-                Vuein.right_alert_app.show(text)
+                Vuein.right_alert_app.show(text,timeout)
             },
             $modal_alert:function(text,res,rej){
                 if (Vuein.modal_alert_app) {

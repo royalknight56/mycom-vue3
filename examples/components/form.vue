@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 11:09:06
+ * @LastEditTime: 2020-10-10 14:24:34
 -->
 <template>
   <div class="main">
@@ -361,10 +361,11 @@
           }}
           </code></pre>
         </mc-articl>
-          <mc-list  v-model:value="listData" > </mc-list>
-          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
-          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
-          
+          <mc-set  v-model:value="listData" > </mc-set>
+          <mc-set width='300px' name='列表头'  v-model:value="listData" ></mc-set>
+          <mc-set editable width='300px' name='列表头'  v-model:value="listData" ></mc-set>
+          {{listData}}
+      
       </mc-page> 
 
     </div>

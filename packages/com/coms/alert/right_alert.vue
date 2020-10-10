@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 16:00:25
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 14:56:41
+ * @LastEditTime: 2020-10-10 18:51:48
 -->
 <template>
   <div class="mc_right_alert_outer">
@@ -31,6 +31,7 @@ export default {
     return {
       alertShow: false,
       message: "",
+      idcount: 0,
       rightalert: [],
 
     };
@@ -46,11 +47,31 @@ export default {
           this.rightalert.splice(index, 1);
       }, 200);
     },
-    show(opt) {
+    show(opt,timeout) {
+      var localid = this.idcount;
       this.rightalert.push({
         message: opt,
         ifShow: true,
+        id: localid,
       });
+
+      if (timeout) {
+        setTimeout(() => {
+          var index = this.rightalert.findIndex((item) => {
+            return item.id == localid;
+          });
+          if(this.rightalert[index]){
+            this.rightalert[index].ifhidden = true;
+          }
+        }, timeout - 200);
+        setTimeout(() => {
+          var index = this.rightalert.findIndex((item) => {
+            return item.id == localid;
+          });
+          this.rightalert.splice(index, 1);
+        }, timeout);
+      }
+      this.idcount++;
 
     },
   },

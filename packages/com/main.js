@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 10:49:52
+ * @LastEditTime: 2020-10-10 11:22:00
  */
 
 // import scss from '../com/coms/header.vue'
@@ -51,6 +51,7 @@ import mc_form_levelselect from '../com/coms/form/levelselect.vue'
 
 import mc_data_table from '../com/coms/data/table.vue'
 import mc_data_list from '../com/coms/data/list.vue'
+import mc_data_set from '../com/coms/data/set.vue'
 
 var components=[
     global,
@@ -101,7 +102,8 @@ var components=[
 
     //数据组件
     mc_data_table,
-    mc_data_list
+    mc_data_list,
+    mc_data_set
 ];
 
 for(let component of components){

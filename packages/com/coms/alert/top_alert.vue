@@ -4,14 +4,20 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 21:44:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 14:57:55
+ * @LastEditTime: 2020-10-10 18:51:56
 -->
 <template>
   <div class="mc_top_alert_outer">
-    <div v-for='item  in topalert' :key='item' class="mc_top_alert_item" :class="item.ifhidden?'mc_top_alert_hidden':''">
+    <div
+      v-for="(item, index) in topalert"
+      :key="item"
+      class="mc_top_alert_item"
+      :class="item.ifhidden ? 'mc_top_alert_hidden' : ''"
+    >
       <div v-if="item.ifShow" class="mc_top_alert">
         {{ item.message }}
       </div>
+      <div @click="hidden(index)" class="mc_right_alert_close">×</div>
     </div>
   </div>
 </template>
@@ -21,42 +27,70 @@ import setting from "../js/setting";
 export default {
   name: "mc-top-alert",
   mixins: [setting],
+  props: {
+    timeout: {
+      type: Number,
+      default: 2000,
+    },
+  },
   data: function () {
     return {
       alertShow: false,
       message: "",
-      topalert:[],
+      idcount: 0,
+      topalert: [],
     };
   },
   mounted: function () {},
   methods: {
-    show(opt) {
-        this.topalert.push({
-            message:opt,
-            ifShow:true,
-        })
-        setTimeout(() => {
-            this.topalert[0].ifhidden=true;
-        }, 1800);
+    hidden(index) {
+      this.topalert[index].ifhidden=true
+      setTimeout(() => {
+          this.topalert.splice(index, 1);
+      }, 200);
+    },
 
+    show(opt, timeout) {
+      var localid = this.idcount;
+      this.topalert.push({
+        id: localid,
+        message: opt,
+        ifShow: true,
+      });
+      if (timeout) {
         setTimeout(() => {
-            this.topalert.splice(0,1)
-        }, 2000);
-
+          var index = this.topalert.findIndex((item) => {
+            return item.id == localid;
+          });
+          if(this.topalert[index]){
+            this.topalert[index].ifhidden = true;
+          }
+        }, timeout - 200);
+        setTimeout(() => {
+          var index = this.topalert.findIndex((item) => {
+            return item.id == localid;
+          });
+          this.topalert.splice(index, 1);
+        }, timeout);
+      }
+      this.idcount++;
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import  '../../../scssvar.scss';
+@import "../../../scssvar.scss";
 
-.mc_top_alert_outer{
-    left: 50%;
+.mc_top_alert_outer {
+  left: 50%;
   transform: translateX(-50%);
   position: fixed;
   top: 20px;
   display: flex;
   flex-direction: column;
+}
+.mc_top_alert_item{
+  position: relative;
 }
 .mc_top_alert {
   position: relative;
@@ -66,7 +100,7 @@ export default {
   margin: 10px 0;
   background-color: $black;
   border: $borderstyle;
-  color: $white ;
+  color: $white;
   // border-radius: 6px;
   text-align: center;
   overflow: hidden;
@@ -74,17 +108,45 @@ export default {
   transition: $alltransition;
 }
 @keyframes topalertan {
-    0%{
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.mc_top_alert_hidden .mc_top_alert{
+.mc_top_alert_hidden .mc_top_alert {
   opacity: 0;
   transform: translateY(-100%);
+}
+
+.mc_rightp_alert_item_close{
+  opacity: 0;
+    transform: translateX(100%);
+}
+.mc_right_alert_close {
+  color: white;
+  position: absolute;
+  right: 4px;
+  top: 10px;
+
+  width: 20px;
+  height: 23px;
+  line-height: 20px;
+
+  user-select: none;
+  font-weight: 600;
+  font-size: 20px;
+  transform: rotateZ(0deg);
+  transform-origin: center;
+  text-align: center;
+
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.mc_right_alert_close:hover {
+  transform: rotateZ(90deg);
 }
 </style>

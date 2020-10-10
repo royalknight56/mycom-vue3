@@ -134,16 +134,20 @@
         <mc-articl>
           出现一个顶部提示框<br />
           参数为text:String,是提示的内容<br />
-
+          time:Number,表示多少秒之后,提示框关闭,没有指定则为只能手动关闭<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
+          this.$top_alert(this.count++,2000);
+          this.$top_alert(this.count++,4000);
           this.$top_alert(this.count++);
             `
           }}
           </code></pre>
         </mc-articl>
-        <mc-button size="small" @click="alertDemo2()"> 按钮 </mc-button>
+        <mc-button size="small" @click="alertDemo2(2000)"> 2秒后消失 </mc-button>
+        <mc-button size="small" @click="alertDemo2(4000)"> 4秒后消失 </mc-button>
+        <mc-button size="small" @click="alertDemo2()"> 只能手动关闭 </mc-button>
       </mc-page>
 
       <mc-page>
@@ -151,16 +155,20 @@
         <mc-articl>
           出现一个右部提示框<br />
           参数为text:String,是提示的内容<br />
-
+          time:Number,表示多少秒之后,提示框关闭,没有指定则为只能手动关闭<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
+          this.$right_alert(this.count++,2000);
+          this.$right_alert(this.count++,4000);
           this.$right_alert(this.count++);
             `
           }}
           </code></pre>
         </mc-articl>
-        <mc-button size="small" @click="alertDemo3()"> 按钮 </mc-button>
+        <mc-button size="small" @click="alertDemo3(2000)"> 2秒后消失 </mc-button>
+        <mc-button size="small" @click="alertDemo3(4000)"> 4秒后消失 </mc-button>
+        <mc-button size="small" @click="alertDemo3()"> 只能手动关闭 </mc-button>
       </mc-page>
 
       <mc-page>
@@ -225,11 +233,11 @@ export default {
         text: "hellohellohellohellohellohellohello",
       });
     },
-    alertDemo2: function () {
-      this.$top_alert(this.count++);
+    alertDemo2: function (time) {
+      this.$top_alert(this.count++,time);
     },
-    alertDemo3: function () {
-      this.$right_alert(this.count++);
+    alertDemo3: function (time) {
+      this.$right_alert(this.count++,time);
     },
     alertDemomodal: function () {
       this.$modal_alert({name:'模态对话框',text:this.count++},()=>{
