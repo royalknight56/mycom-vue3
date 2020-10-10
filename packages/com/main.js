@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-08 19:36:50
+ * @LastEditTime: 2020-10-10 10:49:52
  */
 
 // import scss from '../com/coms/header.vue'
@@ -21,6 +21,7 @@ import mc_useful_percentpie from '../com/coms/useful/percentpie.vue'
 import mc_useful_percentring from '../com/coms/useful/percentring.vue'
 import mc_useful_dropdown from '../com/coms/useful/dropdown.vue'
 import mc_useful_totop from '../com/coms/useful/totop.vue'
+import mc_useful_percentline from '../com/coms/useful/percentline.vue'
 
 import mc_layout_middle from '../com/coms/layout/middle.vue'
 import mc_layout_moretext from '../com/coms/layout/moretext.vue'
@@ -96,6 +97,7 @@ var components=[
     mc_useful_tabpage,
     mc_useful_dropdown,
     mc_useful_totop,
+    mc_useful_percentline,
 
     //数据组件
     mc_data_table,

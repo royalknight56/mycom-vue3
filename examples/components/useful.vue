@@ -100,6 +100,43 @@
       </mc-page>
 
       <mc-page>
+        <mc-text>进度条</mc-text>
+        <mc-articl
+          >待完善的文档
+
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+        <mc-percent-button text="加载中" process="0.5"> </mc-percent-button>
+
+        <mc-percent-button
+          text="加载中.."
+          :process="loading"
+        ></mc-percent-button>
+
+        <mc-percent-button
+          text="加载中.."
+          :process="ctrlloading"
+        ></mc-percent-button>
+        
+        <mc-slider :top="1" v-model:value="ctrlloading"></mc-slider>
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+        <mc-percent-line text="加载中" process="0.5"> </mc-percent-line>
+        <mc-percent-line
+          text="加载中.."
+          :process="loading"
+        ></mc-percent-line>
+        <mc-percent-line
+          text="加载中.."
+          :process="ctrlloading"
+        ></mc-percent-line>
+        <mc-slider :top="1" v-model:value="ctrlloading"></mc-slider>
+      </mc-page>
+
+      <mc-page>
         <mc-text>百分比显示饼图</mc-text>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />

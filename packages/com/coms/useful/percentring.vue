@@ -58,14 +58,15 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import "../../../scssvar.scss";
 .mc_percent_ring {
   z-index: 0;
   position: relative;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgb(228, 228, 228);
+  background-color:rgb(209, 209, 209);
   transition: transform 0.2s;
   transform: scale(1);
   /* background-image: linear-gradient(to right, #655 50%, #655 0); */
@@ -82,7 +83,7 @@ export default {
   margin-left: 50%;
   height: 100%;
   border-radius: 0 100% 100% 0/50%;
-  background-color: rgb(127, 186, 253);
+  background-color:$pblack;
   transform-origin: left;
   transform: rotate(0turn);
   z-index: 1;
@@ -96,7 +97,7 @@ export default {
   margin-left: 50%;
   height: 100%;
   border-radius: 0 100% 100% 0/50%;
-  background-color: rgb(127, 186, 253);
+  background-color: $pblack;
   transform-origin: left;
 
   transform: rotate(0.5turn);

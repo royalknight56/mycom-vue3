@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-08 22:19:49
+ * @LastEditTime: 2020-10-10 11:09:06
 -->
 <template>
   <div class="main">
@@ -285,7 +285,8 @@
       <mc-page>
         <mc-text>评分</mc-text>
         <mc-articl
-          >待完善的文档
+          >通过v-model:value来绑定评分值<br>
+          设置top来指示最高评分值
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
@@ -327,21 +328,22 @@
         <mc-articl
           >通过v-model:value来绑定列表值<br>
           通过name来绑定列表头<br>
+          通过editable来使列表可以编辑<br>
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
           <mc-list  v-model:value="listData" > </mc-list>
           <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
-          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
- 
+          <mc-list width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list editable width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
             `
           }}
           </code></pre>
         </mc-articl>
           <mc-list  v-model:value="listData" > </mc-list>
           <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
-          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
-
+          <mc-list width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
+          <mc-list editable width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
       </mc-page> 
 
       <mc-page>
