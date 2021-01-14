@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 14:24:34
+ * @LastEditTime: 2020-10-10 20:59:59
 -->
 <template>
   <div class="main">
@@ -356,7 +356,7 @@
           <mc-list  v-model:value="listData" > </mc-list>
           <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
           <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
- 
+
             `
           }}
           </code></pre>

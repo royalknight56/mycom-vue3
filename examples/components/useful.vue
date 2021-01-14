@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-06 18:31:20
+ * @LastEditTime: 2020-10-11 15:30:16
 -->
 <template>
   <div class="main">
@@ -211,6 +211,25 @@
           <mc-dropdown @refresh='refreshdemo()'></mc-dropdown>
         </mc-unlock2>
       </mc-page>
+
+      <mc-page>
+        <mc-text>拖拽</mc-text>
+        <mc-articl
+          >待完善的文档
+
+          <pre v-highlightjs class="html hljs"><code class="html">
+          {{
+            `
+            <mc-dropdown @refresh='refreshdemo()'></mc-dropdown>
+            `
+          }}
+          </code></pre>
+        </mc-articl>
+
+          <mc-drag-item></mc-drag-item>
+      </mc-page>
+
+
 
       <mc-page>
         <mc-text>回到顶部</mc-text>

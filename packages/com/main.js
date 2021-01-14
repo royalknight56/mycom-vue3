@@ -22,6 +22,7 @@ import mc_useful_percentring from '../com/coms/useful/percentring.vue'
 import mc_useful_dropdown from '../com/coms/useful/dropdown.vue'
 import mc_useful_totop from '../com/coms/useful/totop.vue'
 import mc_useful_percentline from '../com/coms/useful/percentline.vue'
+import mc_useful_dragitem from '../com/coms/useful/dragitem.vue'
 
 import mc_layout_middle from '../com/coms/layout/middle.vue'
 import mc_layout_moretext from '../com/coms/layout/moretext.vue'
@@ -99,6 +100,7 @@ var components=[
     mc_useful_dropdown,
     mc_useful_totop,
     mc_useful_percentline,
+    mc_useful_dragitem,
 
     //数据组件
     mc_data_table,
