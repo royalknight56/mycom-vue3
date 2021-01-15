@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 18:58:55
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-01 19:23:55
+ * @LastEditTime: 2021-01-15 22:02:12
 -->
 <template>
   <div class="out">
-    <div class="mc_link" :class="type" >
+    <div @click="link_click()" class="mc_link" :class="type" >
       <slot></slot>
     </div>
   </div>
@@ -18,13 +18,14 @@
 import setting from "../js/setting";
 export default {
   name: "mc-link",
-  props: ["type"],
+  props: ["type","href"],
   mixins: [setting],
-  data: function () {
-    return {
-    };
-  },
-  mounted: function () {},
+  setup(props){
+    let link_click=function(){
+      window.open(props.href)
+    }
+    return{link_click}
+  }
 };
 </script>
 <style scoped>

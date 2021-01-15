@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:10:01
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 15:57:34
+ * @LastEditTime: 2021-01-15 16:05:04
 -->
 <template>
   <div class="hello">
@@ -73,5 +73,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.out{
+  white-space: nowrap;
+}
+.hello {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+.header {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  transform: skewX(-4deg);
+  line-height: 50px;
+  padding: 0 10px 0 30px;
+  border-bottom: 1px solid rgb(167, 167, 167);
+  /* box-shadow: inset 0px -3px 2px black; */
+}
 </style>

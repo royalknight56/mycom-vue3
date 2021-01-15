@@ -1,0 +1,117 @@
+.test_tab {
+  background-color: antiquewhite;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+.left {
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.left_menu_level1 {
+  position: relative;
+
+  width: 100%;
+  background-color: rgba(126, 126, 126, 0);
+  transition: all 0.2s;
+  /* border-left: 5px solid rgba(114, 114, 114, 0.267); */
+  cursor: pointer;
+  overflow: hidden;
+}
+.left_menu_level1_text {
+  height: 30px;
+  padding-left: 10px;
+  transition: all 0.2s;
+}
+.left_menu_level1_text_chosen{
+  background-color: rgb(143, 143, 143);
+  color: white;
+}
+.left_menu_level1::after {
+  display: block;
+  /* content: " "; */
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 8px;
+  top: 30px;
+  background-color: black;
+}
+
+.left_menu_level1:hover .left_menu_level1_text {
+  background-color: rgb(90, 90, 90);
+  color: white;
+}
+.left_menu_level2_text {
+  position: absolute;
+  left: 20px;
+  height: 30px;
+  margin-left: 8px;
+  padding-left: 10px;
+  transition: all 0.2s;
+}
+.left_menu_level2 {
+  position: relative;
+  transition: all 0.2s;
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.left_menu_level2::after{
+  display: block;
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.445);
+  transition: all 0.2s;
+}
+.left_menu_level2:hover {
+  background-color: rgba(197, 197, 197, 0.692);
+  color: rgb(0, 0, 0);
+  /* border-left: 5px solid rgba(0, 0, 0, 0.884); */
+}
+.left_menu_level2:hover::after{
+  width: 20px;
+}
+.left_menu_level2_chosen::after{
+  width: 15px;
+}
+
+.right {
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.2s;
+}
+@media screen and (max-width: 400px) {
+  .header:hover + .main .left {
+    display: block;
+  }
+  .left:hover {
+    display: block;
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+  }
+  .main {
+    display: block;
+  }
+  /*
+  .left:hover {
+    width: 200px;
+  } */
+  /* .main {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+  } */
+}

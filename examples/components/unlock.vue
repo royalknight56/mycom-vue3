@@ -1,30 +1,6 @@
 <template>
-  <div class="main">
-    <div class="left">
-      <div class="level1">
-        <div
-          class="left_menu_item"
-          v-for="(level, index) in level1_menu"
-          :key="index"
-          @click="changeTo(level)"
-        >
-          {{ level.name }}
-          <div v-if="level.page == current_page" class="left_menu">
-            <div
-              class="left_menu_item"
-              v-for="(item, index) in menu"
-              :key="index"
-              @click="tpTo(item.offset)"
-            >
-              {{ item.tag }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div ref="right" class="right">
       <mc-page>
-        <mc-text>滑动解锁</mc-text>
+        <mc-title content='滑动解锁'></mc-title>
 
         <mc-articl
           >从左到右拖动滑块成功之后可以显示包裹的内容<br />
@@ -51,7 +27,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>隐藏与显示切换</mc-text>
+        <mc-title content='隐藏与显示切换'></mc-title>
 
         <mc-articl
           >点击按钮选择包裹内容的显示与否<br />
@@ -76,7 +52,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>提示框</mc-text>
+        <mc-title content='提示框'></mc-title>
         <mc-articl>
           使用js代码,弹出一个提示框<br />
           name代表标题,text代表内容<br />
@@ -99,7 +75,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>模态对话框</mc-text>
+        <mc-title content='模态对话框'></mc-title>
         <mc-articl>
           出现一个模态对话框<br />
           参数为(option,resolve,reject)<br />
@@ -130,7 +106,7 @@
 
 
       <mc-page>
-        <mc-text>顶部提示框</mc-text>
+        <mc-title content='顶部提示框'></mc-title>
         <mc-articl>
           出现一个顶部提示框<br />
           参数为text:String,是提示的内容<br />
@@ -151,7 +127,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>右部提示框</mc-text>
+        <mc-title content='右部提示框'></mc-title>
         <mc-articl>
           出现一个右部提示框<br />
           参数为text:String,是提示的内容<br />
@@ -172,7 +148,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>右部提示页</mc-text>
+        <mc-title content='右部提示页'></mc-title>
         <mc-articl>
           定义右部的提示页<br />
           通过切换v-if的值来使它显示<br />
@@ -207,18 +183,14 @@
           </mc-articl>
         </mc-right-page>
       </mc-page>
-    </div>
-  </div>
 </template>
 
 <script>
-// import vue from 'vue'
-import mixin from "./mixin";
+
 
 export default {
   name: "unlock",
-  props: ["level1_menu"],
-  mixins: [mixin],
+
   data() {
     return {
       current_page: "/unlock",
@@ -252,5 +224,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "./exmCss.css";
+/* @import "./exmCss.css"; */
 </style>

@@ -10,8 +10,8 @@
 
 
 ```html
-<mc-text width="200px">这是一个大标题</mc-text>
-<mc-text width="200px" size="small">这是一个标题</mc-text>
+<mc-title width="200px">这是一个大标题</mc-title>
+<mc-title width="200px" size="small">这是一个标题</mc-title>
 ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201004233106853.gif#pic_center)

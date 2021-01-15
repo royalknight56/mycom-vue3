@@ -4,35 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 20:59:59
+ * @LastEditTime: 2021-01-14 22:20:11
 -->
 <template>
-  <div class="main">
-    <div class="left">
-      <div class="level1">
-        <div
-          class="left_menu_item"
-          v-for="(level, index) in level1_menu"
-          :key="index"
-          @click="changeTo(level)"
-        >
-          {{ level.name }}
-          <div v-if="level.page == current_page" class="left_menu">
-            <div
-              class="left_menu_item"
-              v-for="(item, index) in menu"
-              :key="index"
-              @click="tpTo(item.offset)"
-            >
-              {{ item.tag }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div ref="right" class="right">
       <mc-page>
-        <mc-text>输入框</mc-text>
+        <mc-title content='输入框'></mc-title>
         <mc-middle> </mc-middle>
         <mc-articl
           >输入框<br />
@@ -54,7 +30,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>按钮</mc-text>
+        <mc-title content='按钮'></mc-title>
         <mc-articl
           >标题的格式<br />
           可以设置size 为 small或large <br />
@@ -77,7 +53,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>选择器</mc-text>
+        <mc-title content='选择器'></mc-title>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
           label指示可选项 示例中传入的label值如下<br />
@@ -109,7 +85,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-text>级联选择器</mc-text>
+        <mc-title content='级联选择器'></mc-title>
         <mc-articl>
           1006新增<br>
           通过v-model:value绑定用户选择的值<br>
@@ -150,7 +126,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-text>开关</mc-text>
+        <mc-title content='开关'></mc-title>
         <mc-articl
           >一只开关,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -172,7 +148,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>单选按钮</mc-text>
+        <mc-title content='单选按钮'></mc-title>
         <mc-articl
           >一组单选按钮,使用v-model:value绑定值<br />
           v-model:value绑定同一个值时,他们将是同一组按钮<br />
@@ -195,7 +171,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>复选框</mc-text>
+        <mc-title content='复选框'></mc-title>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
           v-model:value绑定同一个值时,他们将是同一组按钮<br />
@@ -223,7 +199,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>数字选择器</mc-text>
+        <mc-title content='数字选择器'></mc-title>
         <mc-articl
           >数字选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中
@@ -241,7 +217,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>日期选择</mc-text>
+        <mc-title content='日期选择'></mc-title>
         <mc-articl
           >日期选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -260,7 +236,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-text>滑动条</mc-text>
+        <mc-title content='滑动条'></mc-title>
         <mc-articl
           >滑动选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -283,7 +259,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>评分</mc-text>
+        <mc-title content='评分'></mc-title>
         <mc-articl
           >通过v-model:value来绑定评分值<br>
           设置top来指示最高评分值
@@ -304,7 +280,7 @@
 
 
       <mc-page>
-        <mc-text>表格</mc-text>
+        <mc-title content='表格'></mc-title>
         <mc-articl
           >通过prop来绑定表格属性值<br>
           通过v-model:value来绑定表格内容<br>
@@ -324,7 +300,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>列表</mc-text>
+        <mc-title content='列表'></mc-title>
         <mc-articl
           >通过v-model:value来绑定列表值<br>
           通过name来绑定列表头<br>
@@ -347,7 +323,7 @@
       </mc-page> 
 
       <mc-page>
-        <mc-text>Set结构</mc-text>
+        <mc-title content='Set结构'></mc-title>
         <mc-articl
           >待完善的文档
           <pre v-highlightjs class="html hljs"><code class="html">
@@ -367,18 +343,12 @@
           {{listData}}
       
       </mc-page> 
-
-    </div>
-  </div>
 </template>
 
 <script>
-import mixin from "./mixin";
-
 export default {
   name: "forms",
-  props: ["level1_menu"],
-  mixins: [mixin],
+
   data() {
     return {
       current_page: "/form",
@@ -386,7 +356,7 @@ export default {
       inputch: "",
       checkch: [],
       checkch2: [],
-      rateerch:3,
+      rateerch: 3,
       selectch: "",
       selectlabel: [
         { label: "草莓sdasfsda", value: "a" },
@@ -407,7 +377,7 @@ export default {
         ["6", "在家", "19"],
       ],
       tableCol: ["年龄", "职业", "编号"],
-      listData:[89,64,21,18,6],
+      listData: [89, 64, 21, 18, 6],
 
       levelselectlabel: [
         {
@@ -463,5 +433,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "./exmCss.css";
+/* @import "./exmCss.css"; */
 </style>

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-08 21:15:06
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 14:30:48
+ * @LastEditTime: 2021-01-14 14:32:09
 -->
 <template>
   <div class="mc_set_out">
@@ -100,6 +100,7 @@ export default {
 }
 
 .set_row {
+  overflow: hidden;
   position: relative;
   width: 30px;
   height: 30px;  

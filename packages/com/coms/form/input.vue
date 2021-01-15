@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:04:12
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 17:10:19
+ * @LastEditTime: 2021-01-14 19:22:24
 -->
 <template>
     <div class="mc_input">
@@ -45,11 +45,16 @@ export default {
 }
 .mc_input_input{
     padding: 6px;
+    background-color: rgba(80, 80, 80, 0.007);
     border: 1px solid rgba(0, 0, 0, 0.233);
     border-radius:0;
     outline: none;
 }
 .mc_input_input:hover{
-    background-color: rgba(80, 80, 80, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.493);
+}
+.mc_input_input:focus{
+  background-color: rgba(255, 255, 255, 0.08);
+
 }
 </style>

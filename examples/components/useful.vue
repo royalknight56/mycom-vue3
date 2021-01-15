@@ -4,35 +4,12 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-11 15:30:16
+ * @LastEditTime: 2021-01-14 21:55:58
 -->
 <template>
-  <div class="main">
-    <div class="left">
-      <div class="level1">
-        <div
-          class="left_menu_item"
-          v-for="(level, index) in level1_menu"
-          :key="index"
-          @click="changeTo(level)"
-        >
-          {{ level.name }}
-          <div v-if="level.page == current_page" class="left_menu">
-            <div
-              class="left_menu_item"
-              v-for="(item, index) in menu"
-              :key="index"
-              @click="tpTo(item.offset)"
-            >
-              {{ item.tag }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div ref="right" class="right">
+
       <mc-page>
-        <mc-text>切换轮播图</mc-text>
+        <mc-title content='切换轮播图'></mc-title>
 
         <mc-articl
           >点击左右的按钮可以切换<br />
@@ -61,7 +38,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>百分比显示按钮</mc-text>
+        <mc-title content='百分比显示按钮'></mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -100,7 +77,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>进度条</mc-text>
+        <mc-title content='进度条'></mc-title>
         <mc-articl
           >待完善的文档
 
@@ -125,10 +102,7 @@
           </code></pre>
         </mc-articl>
         <mc-percent-line text="加载中" process="0.5"> </mc-percent-line>
-        <mc-percent-line
-          text="加载中.."
-          :process="loading"
-        ></mc-percent-line>
+        <mc-percent-line text="加载中.." :process="loading"></mc-percent-line>
         <mc-percent-line
           text="加载中.."
           :process="ctrlloading"
@@ -137,7 +111,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>百分比显示饼图</mc-text>
+        <mc-title content='百分比显示饼图'></mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -162,7 +136,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>百分比显示环图</mc-text>
+        <mc-title content='百分比显示环图'></mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -190,7 +164,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-text>下拉刷新</mc-text>
+        <mc-title content='下拉刷新'></mc-title>
         <mc-articl
           >在顶部会出现检测区域<br />
           当用户从顶部拉到鼠标或手指向下时<br />
@@ -208,12 +182,12 @@
         </mc-articl>
 
         <mc-unlock2 width="50%">
-          <mc-dropdown @refresh='refreshdemo()'></mc-dropdown>
+          <mc-dropdown @refresh="refreshdemo()"></mc-dropdown>
         </mc-unlock2>
       </mc-page>
 
       <mc-page>
-        <mc-text>拖拽</mc-text>
+        <mc-title content='拖拽'></mc-title>
         <mc-articl
           >待完善的文档
 
@@ -226,13 +200,11 @@
           </code></pre>
         </mc-articl>
 
-          <mc-drag-item></mc-drag-item>
+        <mc-drag-item></mc-drag-item>
       </mc-page>
-
-
 
       <mc-page>
-        <mc-text>回到顶部</mc-text>
+        <mc-title content='回到顶部'></mc-title>
         <mc-articl
           >待完善的文档
 
@@ -245,20 +217,16 @@
           </code></pre>
         </mc-articl>
 
-          <mc-totop></mc-totop>
+        <mc-totop></mc-totop>
       </mc-page>
 
-    </div>
-  </div>
 </template>
 
 <script>
-import mixin from "./mixin";
 
 export default {
   name: "useful",
-  props: ["level1_menu"],
-  mixins: [mixin],
+
   data() {
     return {
       current_page: "/useful",
@@ -277,15 +245,15 @@ export default {
       this.loading = this.loading % 1;
     }, 100);
   },
-  methods:{
-    refreshdemo:function(){
-      this.$top_alert('刷新触发')
-    }
-  }
+  methods: {
+    refreshdemo: function () {
+      this.$top_alert("刷新触发");
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "./exmCss.css";
+/* @import "./exmCss.css"; */
 </style>

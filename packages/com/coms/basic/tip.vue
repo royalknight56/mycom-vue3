@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 18:58:55
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-02 19:56:09
+ * @LastEditTime: 2021-01-14 19:14:10
 -->
 <template>
     <div @mouseover="ifShow=true" @mouseleave="ifShow=false" class="mc_tip" >
@@ -53,6 +53,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.74);
     color: white;
     animation: mc_tip_linean 0.2s;
+    pointer-events: none;
 }
 .mc_tip_line::after{
     position: absolute;

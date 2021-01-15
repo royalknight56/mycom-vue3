@@ -4,30 +4,42 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 22:46:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 15:45:27
+ * @LastEditTime: 2021-01-15 22:21:16
 -->
 <template>
   <div class="mc_collapse">
-    <div class="mc_col_top">{{ text.name }}</div>
+    <div class="mc_col_top">{{ title }}</div>
     <input type="checkbox" placeholder="Mickey" class="fold-button" />
     <section>
-      <div class="fold-content">
-        {{ text.text }}
+      <div ref="content" class="fold-content">
+        <slot></slot>
+        <!-- {{ text.text }} -->
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import setting from "../js/setting";
 export default {
   name: "mc-collapse",
-  mixins: [setting],
+
   props: {
-    text: {
-      type: Object,
+    title: {
+      type: String,
       default: function () {
-        return { name: "折叠面板", text: "内容为空" };
+        return "折叠面板";
+      },
+    },
+    width: {
+      type: String,
+      default: function () {
+        return "300px";
+      },
+    },
+    height: {
+      type: String,
+      default: function () {
+        return "150px";
       },
     },
   },
@@ -36,7 +48,14 @@ export default {
       ifShow: false,
     };
   },
-  mounted: function () {},
+  mounted: function () {
+    if (this.width) {
+      this.$el.style.width = this.width;
+    }
+    if (this.height) {
+      this.$refs.content.style.height = this.height;
+    }
+  },
   methods: {
     show: function () {
       this.ifShow = !this.ifShow;
@@ -45,7 +64,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import  '../../../scssvar.scss';
+@import "../../../scssvar.scss";
 
 .mc_collapse {
   position: relative;
@@ -55,7 +74,7 @@ export default {
   position: absolute;
   user-select: none;
   pointer-events: none;
-  color:$white;
+  color: $white;
   top: 0;
   z-index: 1;
   padding: 0 5px;
@@ -72,7 +91,7 @@ export default {
   margin: 0;
   padding: 1px;
   background: $black;
-  color:$white;
+  color: $white;
   border-radius: 0;
   cursor: pointer;
   outline: none;
@@ -81,7 +100,7 @@ export default {
   background: $pblack;
 }
 .fold-button:hover {
-  background:$black;
+  background: $black;
 }
 .fold-button + section {
   position: relative;
@@ -89,8 +108,8 @@ export default {
   overflow: hidden;
 }
 .fold-button + section > div.fold-content {
-  width:100%;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   background: $middlecolor;
   box-sizing: border-box;
 
@@ -103,9 +122,8 @@ export default {
 }
 
 .fold-button:checked + section > div.fold-content {
-  
   opacity: 0;
-  height: 0;
+  height: 0 !important;
   /* transform: scaleY(0); */
 }
 </style>

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 21:44:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 18:51:56
+ * @LastEditTime: 2021-01-14 14:25:48
 -->
 <template>
   <div class="mc_top_alert_outer">
@@ -88,6 +88,7 @@ export default {
   top: 20px;
   display: flex;
   flex-direction: column;
+  z-index: 5;
 }
 .mc_top_alert_item{
   position: relative;

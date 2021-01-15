@@ -9,8 +9,8 @@
 ### 标题
 
 ```html
-<mc-text width="200px">这是一个大标题</mc-text>
-<mc-text width="200px" size="small">这是一个标题</mc-text>
+<mc-title width="200px">这是一个大标题</mc-title>
+<mc-title width="200px" size="small">这是一个标题</mc-title>
 ```
 
 ### 链接
