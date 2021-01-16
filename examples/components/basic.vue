@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 22:06:33
+ * @LastEditTime: 2021-01-16 21:17:20
 -->
 <template>
   <mc-page>
@@ -66,19 +66,33 @@
     <mc-title content='分割线'></mc-title>
     <mc-articl>
       显示一个分割线<br />
-      设置text可以在分割线中显示文字<br />
+      可以在分割线中显示文字<br />
+      设置content-position可以选择分割线中显示文字的位置<br />
+      取值又 left,right
       <br />
       示例
       <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-          <mc-divider text='分割线'></mc-divider>
+            <mc-divider></mc-divider>
+            <mc-divider>分割线</mc-divider>
+            <mc-divider content-position='left'>分割线</mc-divider>
+            <mc-divider content-position='right'>分割线</mc-divider>
             `
           }}
           </code></pre>
     </mc-articl>
     <mc-divider></mc-divider>
-    <mc-divider text="分割线"></mc-divider>
+    <mc-divider>分割线</mc-divider>
+    <mc-divider content-position='left'>分割线</mc-divider>
+    <mc-divider content-position='right'>分割线</mc-divider>
+
+    <mc-title size='small' content='属性值'></mc-title>
+    <mc-table  :prop="['参数','说明','类型','可选值','默认值']"
+    v-model:value="table.divider" > </mc-table>
+
+
+
   </mc-page>
 
   <mc-page>
@@ -142,6 +156,12 @@ export default {
     return {
       checkch: [],
       current_page: "/basic",
+      table:{
+        divider:[
+          ['contentPosition',' 分割线文字位置','String','left/right/middle','middle'],
+    
+        ]
+      }
     };
   },
 };

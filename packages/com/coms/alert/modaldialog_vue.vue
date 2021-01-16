@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 20:23:10
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 20:33:10
+ * @LastEditTime: 2021-01-15 22:54:49
 -->
 <template>
   <div v-if="alertShow" class="mc_alert_basic">
@@ -68,7 +68,7 @@ export default {
 
   transform: translateY(-50%) translateX(-50%);
 
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   border: $borderstyle;
   overflow: hidden;
 
@@ -85,7 +85,7 @@ export default {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: $black ;
+  background-color: $hoverblackcolor ;
   color: $whitecolor ;
   // border-bottom: 1px solid black;
 }
@@ -94,7 +94,7 @@ export default {
   top: 50px;
   width: 100%;
   height: 100%;
-  background-color: $white;
+  background-color: $whitecolor;
 }
 
 @keyframes topalertan {
@@ -110,7 +110,10 @@ export default {
 .mc_alert_button_group{
   position: absolute;
   bottom: 2px;
+  width: 100%;
   display: flex;
+  justify-content: center;
+
   flex-direction: row;
 }
 .mc_alert_button{
@@ -128,11 +131,14 @@ export default {
 }
 .mc_alert_button_res:hover{
   color:$white ;
-  background-color: $black ;
+  background-color: rgba(80, 80, 80, 0.212) ;
 }
 .mc_alert_button_rej{
   color:$white ;
-  background-color: $black;
+  background-color: $hoverblackcolor;
+}
+.mc_alert_button_rej:hover{
+  background-color: rgba(255, 0, 0, 0.329);
 }
 // .mc_alert_button_rej:hover{
 //   color:$black ;

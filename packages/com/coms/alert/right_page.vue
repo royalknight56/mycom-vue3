@@ -58,8 +58,8 @@ export default {
   right: 0;
   top: 0;
   padding: 20px;
-  background-color: rgb(242, 251, 255);
-  border-left: 10px solid rgba(175, 175, 175, 0.418);
+  background-color: rgb(255, 255, 255);
+  border-left: 10px solid rgba(202, 202, 202, 0.418);
   box-shadow: 0 0 10px 10000px rgba(0, 0, 0, 0.295),
   0 0 300px 10px rgba(0, 0, 0, 0.521);
   z-index: 3;

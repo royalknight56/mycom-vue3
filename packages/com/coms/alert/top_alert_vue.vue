@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 21:44:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-14 14:25:48
+ * @LastEditTime: 2021-01-15 22:55:25
 -->
 <template>
   <div class="mc_top_alert_outer">
@@ -99,7 +99,7 @@ export default {
   height: 40px;
   padding: 10px;
   margin: 10px 0;
-  background-color: $black;
+  background-color:$hoverblackcolor;
   border: $borderstyle;
   color: $white;
   // border-radius: 6px;

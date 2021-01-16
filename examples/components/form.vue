@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-14 22:20:11
+ * @LastEditTime: 2021-01-16 20:55:34
 -->
 <template>
       <mc-page>
@@ -288,6 +288,12 @@
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
+      tableData: [
+        ["24", "学生", "1145"],
+        ["18", "工作", "14"],
+        ["6", "在家", "19"],
+      ],
+      tableCol: ["年龄", "职业", "编号"],
           <mc-table  :prop='tableCol' v-model:value="tableData" > </mc-table>
           <mc-table width='300px' :prop='tableCol' editable v-model:value="tableData" > </mc-table>
 

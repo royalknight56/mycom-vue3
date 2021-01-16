@@ -4,11 +4,12 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 11:22:00
+ * @LastEditTime: 2021-01-16 17:34:59
  */
 
 // import scss from '../com/coms/header.vue'
 import global from '../com/coms/global.vue'
+
 
 import mc_alert_com1 from '../com/coms/unlock/unlock.vue'
 import mc_alert_com2 from '../com/coms/unlock/unlock2.vue'
@@ -53,6 +54,8 @@ import mc_form_levelselect from '../com/coms/form/levelselect.vue'
 import mc_data_table from '../com/coms/data/table.vue'
 import mc_data_list from '../com/coms/data/list.vue'
 import mc_data_set from '../com/coms/data/set.vue'
+
+
 
 var components=[
     global,

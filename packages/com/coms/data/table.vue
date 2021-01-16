@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-05 10:23:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-08 20:46:35
+ * @LastEditTime: 2021-01-16 21:15:57
 -->
 <template>
   <div ref="mainin" class="mc_table">
@@ -17,7 +17,9 @@
         {{ row }}
       </div>
     </div>
+    
     <div class="table_row" v-for="(row, index1) in value" :key="index1">
+      
       <div class="table_column" v-for="(column, index2) in row" :key="index2">
         <div
           @click="chose(column, index1, index2)"
@@ -45,12 +47,12 @@
 </template>
 
 <script>
-import setting from "../js/setting";
+// import setting from "../js/setting";
 export default {
   name: "mc-table",
   props: ["value", "prop", "editable"],
 
-  mixins: [setting],
+  // mixins: [setting],
   data: function () {
     return {
       chosex: -1,
@@ -97,14 +99,17 @@ export default {
 <style lang="scss" scoped>
 @import "../../../scssvar.scss";
 .mc_table{
-  width: 200px;
+  width: min-content;
+  display: table;
 }
 .table_row {
-  display: flex;
-  flex-direction: row;
+   display: table-row;
+  // display: flex;
+  // flex-direction: row;
 }
 
 .table_column {
+   display: table-cell;
   // display: flex;
   // flex-direction: column;
 
@@ -113,6 +118,7 @@ export default {
   border: $borderstyle;
   text-align: center;
   transition: $alltransition;
+  white-space: nowrap;
 }
 .table_column:hover {
   background-color: $hovercolor;

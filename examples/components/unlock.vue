@@ -55,12 +55,17 @@
         <mc-title content='提示框'></mc-title>
         <mc-articl>
           使用js代码,弹出一个提示框<br />
+          调用可以从mycom-vue3引入,也可以从this调用,从this调用函数前需要添加$符号<br />
+          参数为(option)<br />
+          option是一个对象{name,text},<br />
+          name为标题,text为内容<br />
           name代表标题,text代表内容<br />
           <br />
 
           <pre v-highlightjs class="js hljs"><code class="js">
           {{
             `
+            
           this.$alert(
             {
               name:'hello',
@@ -78,6 +83,10 @@
         <mc-title content='模态对话框'></mc-title>
         <mc-articl>
           出现一个模态对话框<br />
+
+          使用js代码,弹出一个提示框<br />
+          调用可以从mycom-vue3引入,也可以从this调用,从this调用函数前需要添加$符号<br />
+
           参数为(option,resolve,reject)<br />
           option是一个对象{name,text},<br />
           name为标题,text为内容<br />
@@ -109,11 +118,19 @@
         <mc-title content='顶部提示框'></mc-title>
         <mc-articl>
           出现一个顶部提示框<br />
+
+          使用js代码,弹出一个提示框<br />
+          调用可以从mycom-vue3引入,也可以从this调用,从this调用函数前需要添加$符号<br />
+
           参数为text:String,是提示的内容<br />
           time:Number,表示多少秒之后,提示框关闭,没有指定则为只能手动关闭<br />
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
+            import {top_alert,right_alert,modal_alert} from 'mycom-vue3'
+            top_alert(this.count++,time)
+            this.$top_alert(this.count++,time);
+
           this.$top_alert(this.count++,2000);
           this.$top_alert(this.count++,4000);
           this.$top_alert(this.count++);
@@ -130,6 +147,10 @@
         <mc-title content='右部提示框'></mc-title>
         <mc-articl>
           出现一个右部提示框<br />
+
+          使用js代码,弹出一个提示框<br />
+          调用可以从mycom-vue3引入,也可以从this调用,从this调用函数前需要添加$符号<br />
+
           参数为text:String,是提示的内容<br />
           time:Number,表示多少秒之后,提示框关闭,没有指定则为只能手动关闭<br />
           <pre v-highlightjs class="html hljs"><code class="html">
@@ -151,6 +172,7 @@
         <mc-title content='右部提示页'></mc-title>
         <mc-articl>
           定义右部的提示页<br />
+          
           通过切换v-if的值来使它显示<br />
           当用户点击了关闭按钮或者点击了空白处时<br />
           会触发@close,监听close事件,<br />
@@ -186,7 +208,7 @@
 </template>
 
 <script>
-
+import {top_alert,right_alert,modal_alert} from '../../packages/index'
 
 export default {
   name: "unlock",
@@ -206,12 +228,20 @@ export default {
       });
     },
     alertDemo2: function (time) {
+      top_alert(this.count++,time)
       this.$top_alert(this.count++,time);
     },
     alertDemo3: function (time) {
+      right_alert(this.count++,time);
       this.$right_alert(this.count++,time);
     },
     alertDemomodal: function () {
+      modal_alert({name:'模态对话框',text:this.count++},()=>{
+        top_alert('被接受')
+      },()=>{
+        top_alert('被拒绝')
+      });
+
       this.$modal_alert({name:'模态对话框',text:this.count++},()=>{
         this.$top_alert('被接受')
       },()=>{

@@ -2,7 +2,7 @@
   <div class="outer">
     <div>
       <div id="slider-box" ref="box" onselectstart="return false;">
-        <div class="slider-bgColor"  ref="bgColor"></div>
+        <div class="slider-bgColor" ref="bgColor"></div>
         <div class="slider-txt" ref="txt">滑动解锁</div>
         <!--给i标签添加上相应字体图标的类名即可-->
         <div class="slider-slider" ref="slider">
@@ -15,18 +15,18 @@
 </template>
 
 <script>
-import setting from '../js/setting'
+import setting from "../js/setting";
 export default {
   name: "mc-unlock",
-  mixins:[setting],
-  props:['value'],
-  data:function(){
-      return{
-          ifLocked:false
-      }
+  mixins: [setting],
+  props: ["value"],
+  data: function () {
+    return {
+      ifLocked: false,
+    };
   },
   emits: {
-    ['update:value']: () => {
+    ["update:value"]: () => {
       return true;
     },
   },
@@ -40,18 +40,18 @@ export default {
      * @LastEditors: sueRimn
      * @LastEditTime: 2020-05-10 21:58:29
      */
-    var $this=this
+    var $this = this;
     //一、定义了一个获取元素的方法
     function getEle(selector) {
-        return $this.$refs[selector]
-    //   return document.querySelector(selector);
+      return $this.$refs[selector];
+      //   return document.querySelector(selector);
     }
     //二、获取到需要用到的DOM元素
     var box = getEle("box"), //容器
       bgColor = getEle("bgColor"), //背景色
       txt = getEle("txt"), //文本
       slider = getEle("slider"), //滑块
-    //   icon = getEle(".slider-slider>i"),
+      //   icon = getEle(".slider-slider>i"),
       successMoveDistance = box.offsetWidth - slider.offsetWidth, //解锁需要滑动的距离
       downX, //用于存放鼠标按下时的位置
       isSuccess = false; //是否解锁成功的标志，默认不成功
@@ -82,15 +82,18 @@ export default {
 
     //3.1.1鼠标移动事件的方法实现
     function mousemoveHandler(e) {
-      e = e || window.event || e.which;
-      var moveX = e.clientX;
-      var offsetX = getOffsetX(moveX - downX, 0, successMoveDistance);
-      bgColor.style.width = offsetX + "px";
-      slider.style.left = offsetX + "px";
+      if (!isSuccess) {
+        e = e || window.event || e.which;
+        var moveX = e.clientX;
+        var offsetX = getOffsetX(moveX - downX, 0, successMoveDistance);
+        bgColor.style.width = offsetX + "px";
+        slider.style.left = offsetX + "px";
 
-      if (offsetX == successMoveDistance) {
-        success();
+        if (offsetX == successMoveDistance) {
+          success();
+        }
       }
+
       //如果不设置滑块滑动时会出现问题（目前还不知道为什么）
       e.preventDefault();
     }
@@ -114,8 +117,8 @@ export default {
       bgColor.style.width = "100%";
       bgColor.style.backgroundColor = "lightgreen";
       slider.className = "slider active";
-      this.$emit('update:value',true)
-    //   icon.className = "iconfont icon-xuanzhong";
+      $this.$emit("update:value", true);
+      //   icon.className = "iconfont icon-xuanzhong";
       //滑动成功时，移除鼠标按下事件和鼠标移动事件
       $this.ifLocked = true;
       slider.onmousedown = null;
@@ -125,31 +128,31 @@ export default {
 };
 </script>
 <style scoped>
-.outer{
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+.outer {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
-#slider-box{
+#slider-box {
   position: relative;
   width: 100%;
   height: 40px;
   margin: 10px auto;
-  margin-top: 10px; 
+  margin-top: 10px;
   background-color: #e8e8e8;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-.slider-bgColor{
+.slider-bgColor {
   position: absolute;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   width: 0;
   height: 100%;
   background-color: lightblue;
 }
-.slider-txt{
+.slider-txt {
   position: absolute;
   width: 100%;
   height: 40px;
@@ -158,10 +161,10 @@ export default {
   color: #000;
   text-align: center;
 }
-.slider-slider{
+.slider-slider {
   position: absolute;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   width: 50px;
   height: 38px;
   border: 1px solid #ccc;
@@ -169,14 +172,14 @@ export default {
   text-align: center;
   cursor: move;
 }
-.slider-slider>i{
+.slider-slider > i {
   position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.slider-slider.active>i{
+.slider-slider.active > i {
   right: 0;
-  color:green;
+  color: green;
 }
 </style>

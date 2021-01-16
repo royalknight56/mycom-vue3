@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 18:58:55
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 22:02:12
+ * @LastEditTime: 2021-01-15 22:28:54
 -->
 <template>
   <div class="out">
@@ -22,7 +22,9 @@ export default {
   mixins: [setting],
   setup(props){
     let link_click=function(){
-      window.open(props.href)
+      if(props.href){
+        window.open(props.href)
+      }
     }
     return{link_click}
   }
