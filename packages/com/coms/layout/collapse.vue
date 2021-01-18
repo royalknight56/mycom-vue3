@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 22:46:31
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 22:21:16
+ * @LastEditTime: 2021-01-17 17:53:35
 -->
 <template>
   <div class="mc_collapse">
@@ -110,7 +110,7 @@ export default {
 .fold-button + section > div.fold-content {
   width: 100%;
   height: 100%;
-  background: $middlecolor;
+  background: rgb(245, 245, 245);
   box-sizing: border-box;
 
   padding: 0 5px;

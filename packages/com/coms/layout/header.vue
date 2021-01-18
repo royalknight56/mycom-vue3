@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 20:49:17
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 10:40:17
+ * @LastEditTime: 2021-01-17 18:18:22
 -->
 <template>
   <div
@@ -87,7 +87,7 @@ export default {
   left: 0;
   z-index: 3;
   transition: all 0.2s;
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(248, 248, 248);
   box-shadow: 0 0 5px black;
 }
 .mc_header_hidden {

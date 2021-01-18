@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-16 21:17:20
+ * @LastEditTime: 2021-01-17 09:59:29
 -->
 <template>
   <mc-page>
@@ -13,23 +13,28 @@
     <mc-articl
       >标题的格式<br />
       可以设置size 为 small,middle<br />
-      可以设置width,height<br />
+      <!-- 可以设置width,height<br /> -->
 
       <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-            <mc-title width="200px" content='这是一个大标题'></mc-title>
-            <mc-title width="200px" size="middle" content='这是一个中标题'></mc-title>
-            <mc-title width="200px" size="small" content='这是一个标题'></mc-title>
+            <mc-title content='这是一个大标题'></mc-title>
+            <mc-title size="middle" content='这是一个中标题'></mc-title>
+            <mc-title size="small" content='这是一个标题'></mc-title>
           `
           }}
           </code></pre>
     </mc-articl>
-    <mc-middle>
-      <mc-title width="200px" content='这是一个大标题'></mc-title>
-      <mc-title width="200px" size="middle" content='这是一个中标题'></mc-title>
-      <mc-title width="200px" size="small" content='这是一个标题'></mc-title>
-    </mc-middle>
+
+      <mc-title  content='这是一个大标题'></mc-title>
+      <mc-title  size="middle" content='这是一个中标题'></mc-title>
+      <mc-title  size="small" content='这是一个标题'></mc-title>
+
+
+    <mc-title size='small' content='属性值'></mc-title>
+    <mc-table  :prop="['参数','说明','类型','可选值','默认值']"
+    v-model:value="table.title" > </mc-table>
+
   </mc-page>
 
   <mc-page>
@@ -60,6 +65,11 @@
       <mc-link width="200px" type="blue">默认链接</mc-link>
       <mc-link width="200px" type="yellow">默认链接</mc-link>
     </mc-middle>
+
+    <mc-title size='middle' content='属性值'></mc-title>
+    <mc-table  :prop="['参数','说明','类型','可选值','默认值']"
+    v-model:value="table.link" > </mc-table>
+
   </mc-page>
 
   <mc-page>
@@ -157,6 +167,14 @@ export default {
       checkch: [],
       current_page: "/basic",
       table:{
+        title:[
+          ['content','标题内容','String','-','-'],
+          ['size','标题大小','String','small/middle/large','large'],
+        ],
+        link:[
+          ['type','颜色','String','red/blue/yellow','-'],
+          ['href','指向的链接','String','[link]','-'],
+        ],
         divider:[
           ['contentPosition',' 分割线文字位置','String','left/right/middle','middle'],
     
