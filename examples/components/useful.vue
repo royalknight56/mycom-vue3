@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-14 21:55:58
+ * @LastEditTime: 2021-01-20 20:22:40
 -->
 <template>
 
@@ -206,7 +206,7 @@
       <mc-page>
         <mc-title content='回到顶部'></mc-title>
         <mc-articl
-          >待完善的文档
+          >待完善的文档-无法使用
 
           <pre v-highlightjs class="html hljs"><code class="html">
           {{
