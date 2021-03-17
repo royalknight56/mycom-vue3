@@ -201,16 +201,9 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   background-color: $whitecolor;
-  animation: mc_radio_cir_cenan 0.2s;
+  animation: mc_date_menu_cenan 0.2s;
 }
-@keyframes mc_radio_cir_cenan {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .mc_date_input_main {
   width: 130px;
   text-align: center;
@@ -230,5 +223,15 @@ export default {
 }
 .mc_date_input_button::selection {
   background: none;
+}
+</style>
+<style>
+@keyframes mc_date_menu_cenan {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

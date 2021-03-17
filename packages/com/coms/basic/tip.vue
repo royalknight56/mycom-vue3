@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 18:58:55
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-14 19:14:10
+ * @LastEditTime: 2021-03-17 13:49:02
 -->
 <template>
     <div @mouseover="ifShow=true" @mouseleave="ifShow=false" class="mc_tip" >
@@ -68,6 +68,9 @@ export default {
     width: 0px;
     height: 0px;
 }
+
+</style>
+<style>
 @keyframes mc_tip_linean {
     0%{
         opacity: 0;

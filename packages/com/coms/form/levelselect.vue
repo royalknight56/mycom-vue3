@@ -148,7 +148,7 @@ export default {
   border: $borderstyle;
 
   outline: none;
-  animation: mc_radio_cir_cenan 0.1s linear;
+  animation: mc_select_menuan 0.1s linear;
 }
 .mc_select_menu_item_chose {
   background-color: $black;
@@ -171,7 +171,9 @@ export default {
   background: none;
 }
 
-@keyframes mc_radio_cir_cenan {
+</style>
+<style>
+@keyframes mc_select_menuan {
   0% {
     opacity: 0;
   }

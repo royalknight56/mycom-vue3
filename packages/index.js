@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:26:45
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-16 17:49:51
+ * @LastEditTime: 2021-03-17 13:05:06
  */
 import components from './com/main'
 export * from './jsApi'
@@ -17,9 +17,16 @@ const install = function (Vue) {
 if (typeof window.Vue !== "undefined" && window.Vue) {
   install(window.Vue);
 }
-// console.log(jsApi)
-export default {
-  install,
-  ...[components],
-  
+export let mc = {
+  install
 }
+// export default {
+//   install,
+//   ...[components],
+//   ...jsapi
+  
+// }
+
+// export  ...[components]
+// export jsapi
+  

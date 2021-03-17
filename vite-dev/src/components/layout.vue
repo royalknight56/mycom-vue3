@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-17 17:57:00
+ * @LastEditTime: 2021-03-17 12:22:56
 -->
 <template>
   <mc-page>
-    <mc-title content='段落'></mc-title>
+    <mc-title content='段落'>段落</mc-title>
     <mc-articl>
       显示一个段落的布局<br />
       用于文章<br />
@@ -39,7 +39,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='头部菜单'></mc-title>
+    <mc-title content='头部菜单'>头部菜单</mc-title>
     <mc-articl>
       显示一个头部菜单<br />
       用于导航<br />
@@ -71,7 +71,7 @@
     </mc-unlock2>
   </mc-page>
   <mc-page>
-    <mc-title content='居中框'></mc-title>
+    <mc-title content='居中框'>居中框</mc-title>
     <mc-articl>
       居中框显示一个一直在居中的框体<br />
       用于登录框 <br />
@@ -93,7 +93,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='居中布局'></mc-title>
+    <mc-title content='居中布局'>居中布局</mc-title>
     <mc-articl>
       使包裹的组件居中<br />
       <br />
@@ -112,7 +112,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='折叠面板'></mc-title>
+    <mc-title content='折叠面板'>折叠面板</mc-title>
     <mc-articl>
       显示一个折叠面板<br />
       用户点击折叠面板标题<br />
@@ -143,7 +143,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='卡片'></mc-title>
+    <mc-title content='卡片'>卡片</mc-title>
     <mc-articl>
       显示一个卡片<br />
       用于介绍<br />

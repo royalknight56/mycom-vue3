@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 18:00:02
+ * @LastEditTime: 2021-03-17 13:50:41
 -->
 <template>
   <div @click="chose()" class="mc_radio">
@@ -77,6 +77,9 @@ export default {
   border-radius: 50%;
   animation: mc_radio_cir_cenan 0.2s;
 }
+
+</style>
+<style>
 @keyframes mc_radio_cir_cenan {
   0% {
     width: 1px;
@@ -87,7 +90,4 @@ export default {
     height: 10px;
   }
 }
-</style>
-<style scoped>
-
 </style>

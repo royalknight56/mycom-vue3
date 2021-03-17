@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-16 20:55:34
+ * @LastEditTime: 2021-03-17 12:21:27
 -->
 <template>
       <mc-page>
-        <mc-title content='输入框'></mc-title>
+        <mc-title content='输入框'>输入框</mc-title>
         <mc-middle> </mc-middle>
         <mc-articl
           >输入框<br />
@@ -30,7 +30,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='按钮'></mc-title>
+        <mc-title content='按钮'>按钮</mc-title>
         <mc-articl
           >标题的格式<br />
           可以设置size 为 small或large <br />
@@ -53,7 +53,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='选择器'></mc-title>
+        <mc-title content='选择器'>选择器</mc-title>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
           label指示可选项 示例中传入的label值如下<br />
@@ -85,7 +85,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-title content='级联选择器'></mc-title>
+        <mc-title content='级联选择器'>级联选择器</mc-title>
         <mc-articl>
           1006新增<br>
           通过v-model:value绑定用户选择的值<br>
@@ -126,7 +126,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-title content='开关'></mc-title>
+        <mc-title content='开关'>开关</mc-title>
         <mc-articl
           >一只开关,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -148,7 +148,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='单选按钮'></mc-title>
+        <mc-title content='单选按钮'>单选按钮</mc-title>
         <mc-articl
           >一组单选按钮,使用v-model:value绑定值<br />
           v-model:value绑定同一个值时,他们将是同一组按钮<br />
@@ -171,7 +171,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='复选框'></mc-title>
+        <mc-title content='复选框'>复选框</mc-title>
         <mc-articl
           >一组复选按钮,使用v-model:value绑定值<br />
           v-model:value绑定同一个值时,他们将是同一组按钮<br />
@@ -199,7 +199,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='数字选择器'></mc-title>
+        <mc-title content='数字选择器'>数字选择器</mc-title>
         <mc-articl
           >数字选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中
@@ -217,7 +217,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='日期选择'></mc-title>
+        <mc-title content='日期选择'>日期选择</mc-title>
         <mc-articl
           >日期选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -236,7 +236,7 @@
       </mc-page>
       
       <mc-page>
-        <mc-title content='滑动条'></mc-title>
+        <mc-title content='滑动条'>滑动条</mc-title>
         <mc-articl
           >滑动选择,使用v-model:value绑定值<br />
           用户选择的结果会保存到绑定的值中<br />
@@ -259,7 +259,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='评分'></mc-title>
+        <mc-title content='评分'>评分</mc-title>
         <mc-articl
           >通过v-model:value来绑定评分值<br>
           设置top来指示最高评分值
@@ -280,7 +280,7 @@
 
 
       <mc-page>
-        <mc-title content='表格'></mc-title>
+        <mc-title content='表格'>表格</mc-title>
         <mc-articl
           >通过prop来绑定表格属性值<br>
           通过v-model:value来绑定表格内容<br>
@@ -306,7 +306,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='列表'></mc-title>
+        <mc-title content='列表'>列表</mc-title>
         <mc-articl
           >通过v-model:value来绑定列表值<br>
           通过name来绑定列表头<br>
@@ -329,7 +329,7 @@
       </mc-page> 
 
       <mc-page>
-        <mc-title content='Set结构'></mc-title>
+        <mc-title content='Set结构'>Set结构</mc-title>
         <mc-articl
           >待完善的文档
           <pre v-highlightjs class="html hljs"><code class="html">

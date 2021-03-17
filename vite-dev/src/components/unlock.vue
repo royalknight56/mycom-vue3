@@ -1,6 +1,6 @@
 <template>
       <mc-page>
-        <mc-title content='滑动解锁'></mc-title>
+        <mc-title content='滑动解锁'>滑动解锁</mc-title>
 
         <mc-articl
           >从左到右拖动滑块成功之后可以显示包裹的内容<br />
@@ -27,7 +27,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='隐藏与显示切换'></mc-title>
+        <mc-title content='隐藏与显示切换'>隐藏与显示切换</mc-title>
 
         <mc-articl
           >点击按钮选择包裹内容的显示与否<br />
@@ -52,7 +52,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='提示框'></mc-title>
+        <mc-title content='提示框'>提示框</mc-title>
         <mc-articl>
           使用js代码,弹出一个提示框<br />
           调用可以从mycom-vue3引入,也可以从this调用,从this调用函数前需要添加$符号<br />
@@ -80,7 +80,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='模态对话框'></mc-title>
+        <mc-title content='模态对话框'>模态对话框</mc-title>
         <mc-articl>
           出现一个模态对话框<br />
 
@@ -115,7 +115,7 @@
 
 
       <mc-page>
-        <mc-title content='顶部提示框'></mc-title>
+        <mc-title content='顶部提示框'>顶部提示框</mc-title>
         <mc-articl>
           出现一个顶部提示框<br />
 
@@ -144,7 +144,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='右部提示框'></mc-title>
+        <mc-title content='右部提示框'>右部提示框</mc-title>
         <mc-articl>
           出现一个右部提示框<br />
 
@@ -169,7 +169,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='右部提示页'></mc-title>
+        <mc-title content='右部提示页'>右部提示页</mc-title>
         <mc-articl>
           定义右部的提示页<br />
           
@@ -208,8 +208,9 @@
 </template>
 
 <script>
-import {top_alert,right_alert,modal_alert} from '../../packages/index'
-
+import {top_alert,right_alert,modal_alert} from '../../../packages/index'
+// import * as test from 'mycom-vue3'
+// console.log(test)
 export default {
   name: "unlock",
 

@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-16 17:33:38
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-15 16:29:35
+ * @LastEditTime: 2021-03-17 12:40:46
  */
 import alert_basic from './com/coms/alert/alert_basic.vue'
 import top_alert_vue from './com/coms/alert/top_alert_vue.vue'
@@ -12,10 +12,10 @@ import right_alert_vue from './com/coms/alert/right_alert_vue.vue'
 import modal_alert_vue from './com/coms/alert/modaldialog_vue.vue'
 import { reactive, createApp } from 'vue'
 
-export let alert_app = reactive({value:null})
-export let top_alert_app = reactive({value:null})
-export let right_alert_app = reactive({value:null})
-export let modal_alert_app = reactive({value:null})
+ let alert_app = reactive({value:null})
+ let top_alert_app = reactive({value:null})
+ let right_alert_app = reactive({value:null})
+ let modal_alert_app = reactive({value:null})
 
 
 function ifMontedAndAlert(app,com,id,...par){

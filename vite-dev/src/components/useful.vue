@@ -4,12 +4,12 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-20 20:22:40
+ * @LastEditTime: 2021-03-17 12:27:11
 -->
 <template>
 
       <mc-page>
-        <mc-title content='切换轮播图'></mc-title>
+        <mc-title content='切换轮播图'>切换轮播图</mc-title>
 
         <mc-articl
           >点击左右的按钮可以切换<br />
@@ -38,7 +38,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='百分比显示按钮'></mc-title>
+        <mc-title content='百分比显示按钮'>百分比显示按钮</mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -77,7 +77,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='进度条'></mc-title>
+        <mc-title content='进度条'>进度条</mc-title>
         <mc-articl
           >待完善的文档
 
@@ -111,7 +111,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='百分比显示饼图'></mc-title>
+        <mc-title content='百分比显示饼图'>百分比显示饼图</mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -136,7 +136,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='百分比显示环图'></mc-title>
+        <mc-title content='百分比显示环图'>百分比显示环图</mc-title>
         <mc-articl
           >通过绑定process来控制百分比的显示<br />
           process为0~1的小数<br />
@@ -164,7 +164,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='下拉刷新'></mc-title>
+        <mc-title content='下拉刷新'>下拉刷新</mc-title>
         <mc-articl
           >在顶部会出现检测区域<br />
           当用户从顶部拉到鼠标或手指向下时<br />
@@ -187,7 +187,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='拖拽'></mc-title>
+        <mc-title content='拖拽'>拖拽</mc-title>
         <mc-articl
           >待完善的文档
 
@@ -204,7 +204,7 @@
       </mc-page>
 
       <mc-page>
-        <mc-title content='回到顶部'></mc-title>
+        <mc-title content='回到顶部'>回到顶部</mc-title>
         <mc-articl
           >待完善的文档-无法使用
 

@@ -64,7 +64,7 @@ export default {
   0 0 300px 10px rgba(0, 0, 0, 0.521);
   z-index: 3;
 
-  animation: topalertan 0.2s;
+  animation: right_pagetan 0.2s;
 }
 .mc_rightp_page_item {
   position: relative;
@@ -104,7 +104,10 @@ export default {
 .mc_right_page_close:hover {
   transform: rotateZ(180deg);
 }
-@keyframes topalertan {
+
+</style>
+<style>
+@keyframes right_pagetan {
   0% {
     opacity: 0;
     transform: translateX(100%);

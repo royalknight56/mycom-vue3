@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 19:18:55
+ * @LastEditTime: 2021-03-17 13:49:31
 -->
 <template>
   <div @click="chose()" class="mc_checkbox">
@@ -81,9 +81,12 @@ export default {
   width: 10px;
   height: 10px;
   background-color: $white;
-  animation: mc_radio_cir_cenan 0.2s;
+  animation: mc_checkbox_cenan 0.2s;
 }
-@keyframes mc_radio_cir_cenan {
+
+</style>
+<style>
+@keyframes mc_checkbox_cenan {
   0% {
     width: 1px;
     height: 1px;

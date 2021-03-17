@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-03 16:00:25
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 18:51:48
+ * @LastEditTime: 2021-03-17 13:46:10
 -->
 <template>
   <div class="mc_right_alert_outer">
@@ -12,9 +12,12 @@
       v-for="(item, index) in rightalert"
       :key="item"
       class="mc_rightp_alert_item"
-      
     >
-      <div v-if="item.ifShow" :class="item.ifhidden?'mc_rightp_alert_item_close':''" class="mc_right_alert">
+      <div
+        v-if="item.ifShow"
+        :class="item.ifhidden ? 'mc_rightp_alert_item_close' : ''"
+        class="mc_right_alert"
+      >
         {{ item.message }}
       </div>
       <div @click="hidden(index)" class="mc_right_alert_close">×</div>
@@ -33,21 +36,17 @@ export default {
       message: "",
       idcount: 0,
       rightalert: [],
-
     };
   },
-  mounted: function () {
-    
-  },
+  mounted: function () {},
   methods: {
-    
     hidden(index) {
-      this.rightalert[index].ifhidden=true
+      this.rightalert[index].ifhidden = true;
       setTimeout(() => {
-          this.rightalert.splice(index, 1);
+        this.rightalert.splice(index, 1);
       }, 200);
     },
-    show(opt,timeout) {
+    show(opt, timeout) {
       var localid = this.idcount;
       this.rightalert.push({
         message: opt,
@@ -60,7 +59,7 @@ export default {
           var index = this.rightalert.findIndex((item) => {
             return item.id == localid;
           });
-          if(this.rightalert[index]){
+          if (this.rightalert[index]) {
             this.rightalert[index].ifhidden = true;
           }
         }, timeout - 200);
@@ -72,13 +71,12 @@ export default {
         }, timeout);
       }
       this.idcount++;
-
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import  '../../../scssvar.scss';
+@import "../../../scssvar.scss";
 
 .mc_right_alert_outer {
   position: fixed;
@@ -98,16 +96,16 @@ export default {
   padding: 6px;
   margin: 10px 0;
   background-color: $hoverblackcolor;
-  border: $borderstyle ;
+  border: $borderstyle;
 
   text-align: center;
   overflow: hidden;
-  animation: topalertan 0.2s;
+  animation: topalertrightan 0.2s;
   transition: all 0.2s;
 }
-.mc_rightp_alert_item_close{
+.mc_rightp_alert_item_close {
   opacity: 0;
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 .mc_right_alert_close {
   color: white;
@@ -132,7 +130,9 @@ export default {
 .mc_right_alert_close:hover {
   transform: rotateZ(90deg);
 }
-@keyframes topalertan {
+</style>
+<style>
+@keyframes topalertrightan {
   0% {
     opacity: 0;
     transform: translateX(100%);

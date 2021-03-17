@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-17 09:59:29
+ * @LastEditTime: 2021-03-17 12:19:14
 -->
 <template>
   <mc-page>
-    <mc-title content='标题'></mc-title>
+    <mc-title content='标题'>标题</mc-title>
 
     <mc-articl
       >标题的格式<br />
@@ -18,17 +18,17 @@
       <pre v-highlightjs class="html hljs"><code class="html">
           {{
             `
-            <mc-title content='这是一个大标题'></mc-title>
-            <mc-title size="middle" content='这是一个中标题'></mc-title>
-            <mc-title size="small" content='这是一个标题'></mc-title>
+            <mc-title >这是一个大标题</mc-title>
+            <mc-title size="middle" >这是一个中标题</mc-title>
+            <mc-title size="small" >这是一个标题</mc-title>
           `
           }}
           </code></pre>
     </mc-articl>
 
-      <mc-title  content='这是一个大标题'></mc-title>
-      <mc-title  size="middle" content='这是一个中标题'></mc-title>
-      <mc-title  size="small" content='这是一个标题'></mc-title>
+      <mc-title>这是一个大标题</mc-title>
+      <mc-title  size="middle">这是一个中标题</mc-title>
+      <mc-title  size="small">这是一个标题</mc-title>
 
 
     <mc-title size='small' content='属性值'></mc-title>
@@ -38,7 +38,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='链接'></mc-title>
+    <mc-title content='链接'>链接</mc-title>
 
     <mc-articl
       >链接的格式<br />
@@ -66,14 +66,14 @@
       <mc-link width="200px" type="yellow">默认链接</mc-link>
     </mc-middle>
 
-    <mc-title size='middle' content='属性值'></mc-title>
+    <mc-title size='middle' content='属性值'>属性值</mc-title>
     <mc-table  :prop="['参数','说明','类型','可选值','默认值']"
     v-model:value="table.link" > </mc-table>
 
   </mc-page>
 
   <mc-page>
-    <mc-title content='分割线'></mc-title>
+    <mc-title content='分割线'>分割线</mc-title>
     <mc-articl>
       显示一个分割线<br />
       可以在分割线中显示文字<br />
@@ -97,7 +97,7 @@
     <mc-divider content-position='left'>分割线</mc-divider>
     <mc-divider content-position='right'>分割线</mc-divider>
 
-    <mc-title size='small' content='属性值'></mc-title>
+    <mc-title size='small' content='属性值'>属性值</mc-title>
     <mc-table  :prop="['参数','说明','类型','可选值','默认值']"
     v-model:value="table.divider" > </mc-table>
 
@@ -106,7 +106,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='文字提示'></mc-title>
+    <mc-title content='文字提示'>文字提示</mc-title>
     <mc-articl>
       使用mc-tip组件来包裹需要进行提示的组件<br />
       设置text来指示需要提示的内容<br />
@@ -134,7 +134,7 @@
   </mc-page>
 
   <mc-page>
-    <mc-title content='标签'></mc-title>
+    <mc-title content='标签'>标签</mc-title>
     <mc-articl>
       显示一个标签<br />
       设置text来指示标签的内容<br />

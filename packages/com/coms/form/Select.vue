@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 12:50:50
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 17:23:48
+ * @LastEditTime: 2021-03-17 13:51:24
 -->
 <template>
   <div class="mc_select">
@@ -110,7 +110,7 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.233);
   border-radius: 4px;
   outline: none;
-  animation: mc_radio_cir_cenan 0.1s linear;
+  animation: mc_select_menu_main_cenan 0.1s linear;
 }
 .mc_select_menu_item {
   padding: 6px;
@@ -129,7 +129,9 @@ export default {
   background: none;
 }
 
-@keyframes mc_radio_cir_cenan {
+</style>
+<style>
+@keyframes mc_select_menu_main_cenan {
   0% {
     opacity: 0;
   }

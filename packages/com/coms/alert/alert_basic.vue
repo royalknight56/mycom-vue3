@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 17:07:32
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-05 15:03:25
+ * @LastEditTime: 2021-03-17 13:45:15
 -->
 <template>
   <div v-if="alertShow" class="mc_alert_basic">
@@ -99,16 +99,7 @@ export default {
     background-color: $white;
 }
 
-@keyframes topalertan {
-    0%{
-        opacity: 0;
-        transform:translateX(-50%) translateY(-100%);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(-50%) translateY(-50%);
-    }
-}
+
 .mc_right_alert_close {
   color: white;
   position: absolute;
@@ -131,5 +122,18 @@ export default {
 }
 .mc_right_alert_close:hover {
   transform: rotateZ(90deg);
+}
+</style>
+
+<style>
+@keyframes topalertan {
+    0%{
+        opacity: 0;
+        transform:translateX(-50%) translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 </style>

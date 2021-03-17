@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 21:44:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 22:55:25
+ * @LastEditTime: 2021-03-17 13:48:46
 -->
 <template>
   <div class="mc_top_alert_outer">
@@ -105,19 +105,10 @@ export default {
   // border-radius: 6px;
   text-align: center;
   overflow: hidden;
-  animation: topalertan 0.2s;
+  animation: topalertmainan 0.2s;
   transition: $alltransition;
 }
-@keyframes topalertan {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 .mc_top_alert_hidden .mc_top_alert {
   opacity: 0;
   transform: translateY(-100%);
@@ -149,5 +140,18 @@ export default {
 }
 .mc_right_alert_close:hover {
   transform: rotateZ(90deg);
+}
+</style>
+
+<style>
+@keyframes topalertmainan {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

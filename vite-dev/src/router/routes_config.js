@@ -4,13 +4,13 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-15 10:39:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-20 20:22:08
+ * @LastEditTime: 2021-03-17 12:07:20
  */
 export default{
     list:[
         {
           path:'/',
-          component: () => import('../layout'),
+          component: () => import('../layout/index.vue'),
           children:[
             {
               path: '',
