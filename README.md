@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 21:09:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 17:58:05
+ * @LastEditTime: 2021-03-17 14:12:35
 -->
 # mycom-vue3
 
@@ -26,7 +26,7 @@ npm install mycom-vue3 --save
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import mc from 'mycom-vue3'//引入组件库
+import {mc} from 'mycom-vue3'//引入组件库
 import 'mycom-vue3/lib/mycom-vue3.css';//引入CSS样式文件
 
 createApp(App).use(mc).mount('#app')
@@ -57,6 +57,13 @@ mc-tab-page表示轮播图单页
 
 ```
 
+## 1.0317版本更新
+
+引入方式变更为import {mc} from 'mycom-vue3'//引入组件库,
+
+用来弥补之前的版本失误,深表抱歉
+
+mc-title 用法更新
 
 ## 1005版本更新
 
