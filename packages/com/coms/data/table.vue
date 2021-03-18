@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-05 10:23:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-16 21:15:57
+ * @LastEditTime: 2021-03-18 14:41:22
 -->
 <template>
   <div ref="mainin" class="mc_table">
@@ -17,9 +17,8 @@
         {{ row }}
       </div>
     </div>
-    
+
     <div class="table_row" v-for="(row, index1) in value" :key="index1">
-      
       <div class="table_column" v-for="(column, index2) in row" :key="index2">
         <div
           @click="chose(column, index1, index2)"
@@ -31,11 +30,20 @@
           class="table_item"
         >
           <input
-            ref="table_input"
+            :ref="
+              (el) => {
+                if (tableinput[index1]) {
+                  tableinput[index1][index2] = el;
+                } else {
+                  tableinput[index1]=[];
+                  tableinput[index1][index2] = el;
+                }
+              }
+            "
             @blur="blurfun()"
             @keyup.enter="endedit()"
             v-model="changevalue"
-            v-if="editx == index1 && edity == index2"
+            v-show="editx == index1 && edity == index2"
             class="table_item_input"
           />
           <!-- :value="column ? column : null" -->
@@ -47,12 +55,67 @@
 </template>
 
 <script>
+import { nextTick, ref } from "vue";
 // import setting from "../js/setting";
 export default {
   name: "mc-table",
   props: ["value", "prop", "editable"],
 
   // mixins: [setting],
+
+  setup(props,context) {
+
+    let editx = ref(-1);
+    let edity = ref(-1);
+
+    let chosex = ref(-1);
+    let chosey = ref(-1);
+
+    let changevalue = ref("");
+
+    let tableinput = ref([]);
+    function endedit() {
+      let re = JSON.parse(JSON.stringify(props.value));
+      re[editx.value][edity.value] = changevalue.value;
+      context.emit("update:value", re);
+      // context.emit("value", re);
+      props.value[editx.value][edity.value]= changevalue.value;
+      tableinput.value[editx.value][edity.value].blur()
+
+    }
+    function blurfun() {
+      editx.value = -1;
+      edity.value = -1;
+    }
+    function chose(column, index1, index2) {
+      chosex.value = index1;
+      chosey.value = index2;
+    }
+    function edit(column, index1, index2) {
+      if (props.editable == "") {
+        changevalue.value = column;
+        editx.value = index1;
+        edity.value = index2;
+
+        nextTick(() => {
+          tableinput.value[index1][index2].focus();
+        });
+      }
+    }
+
+    return {
+      chosex,
+      chosey,
+      editx,
+      edity,
+      changevalue,
+      endedit,
+      blurfun,
+      chose,
+      edit,
+      tableinput,
+    };
+  },
   data: function () {
     return {
       chosex: -1,
@@ -69,47 +132,52 @@ export default {
     },
   },
   methods: {
-    endedit() {
-      let re = JSON.parse(JSON.stringify(this.value));
-      re[this.editx][this.edity]= this.changevalue;
-      this.$emit("update:value",re);
-      this.$refs.table_input.blur();
-    },
-    blurfun() {
-      this.editx = -1;
-      this.edity = -1;
-    },
-    chose(column, index1, index2) {
-      this.chosex = index1;
-      this.chosey = index2;
-    },
-    edit(column, index1, index2) {
-      if (this.editable == "") {
-        this.changevalue = column;
-        this.editx = index1;
-        this.edity = index2;
-        this.$nextTick(() => {
-          this.$refs.table_input.focus();
-        });
-      }
-    },
+    // endedit() {
+    //   let re = JSON.parse(JSON.stringify(this.value));
+    //   re[this.editx][this.edity]= this.changevalue;
+    //   console.log(this.editx)
+    //   console.log(this.edity)
+    //   console.log(this.changevalue)
+    //   console.log(re)
+    //   this.$emit("update:value",re);
+    //   console.log(this.value)
+    //   this.$refs.table_input.blur();
+    // },
+    // blurfun() {
+    //   this.editx = -1;
+    //   this.edity = -1;
+    // },
+    // chose(column, index1, index2) {
+    //   this.chosex = index1;
+    //   this.chosey = index2;
+    // },
+    // edit(column, index1, index2) {
+    //   if (this.editable == "") {
+    //     this.changevalue = column;
+    //     this.editx = index1;
+    //     this.edity = index2;
+    //     this.$nextTick(() => {
+    //       this.$refs.table_input.focus();
+    //     });
+    //   }
+    // },
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "../../../scssvar.scss";
-.mc_table{
+.mc_table {
   width: min-content;
   display: table;
 }
 .table_row {
-   display: table-row;
+  display: table-row;
   // display: flex;
   // flex-direction: row;
 }
 
 .table_column {
-   display: table-cell;
+  display: table-cell;
   // display: flex;
   // flex-direction: column;
 
@@ -146,7 +214,6 @@ export default {
   overflow: hidden;
   position: relative;
   height: 100%;
-  
 }
 .prop_column {
   width: 100%;
