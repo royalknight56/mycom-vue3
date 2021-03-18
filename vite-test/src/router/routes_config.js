@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-15 10:39:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 12:07:20
+ * @LastEditTime: 2021-03-18 12:37:16
  */
 export default{
     list:[
@@ -24,17 +24,12 @@ export default{
             {
               path: '/basic',
               name: 'Basic',
-              component: () => import('../components/basic.vue')
+              component: () => import('../components/basicNew.vue')
             },
             {
               path: '/unlock',
               name: 'Unlock',
               component: () => import('../components/unlock.vue')
-            },
-            {
-              path: '/basic',
-              name: 'Basic',
-              component: () => import( '../components/basic.vue')
             },
             {
               path: '/layout',
@@ -49,7 +44,7 @@ export default{
             {
               path: '/form',
               name: 'Form',
-              component: () => import('../components/form.vue')
+              component: () => import('../components/formNew.vue')
             }
           ]
         },

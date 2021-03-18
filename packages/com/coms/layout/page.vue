@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:58:58
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-09-30 09:50:09
+ * @LastEditTime: 2021-03-17 17:15:38
 -->
 <template>
       <div class="mc_page">
-          <slot></slot>
+          <slot> </slot>
       </div>
 </template>
 

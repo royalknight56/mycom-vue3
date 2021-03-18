@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-15 14:52:42
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:32:46
+ * @LastEditTime: 2021-03-17 19:46:52
 -->
 <!--
  * @Descripttion: 
@@ -41,7 +41,6 @@
       <mc-link href="https://github.com/royalknight56/mycom-vue3">https://github.com/royalknight56/mycom-vue3</mc-link>
     </mc-articl>
   </mc-page>
-
   <mc-page>
     <mc-title content='更新信息'>更新信息</mc-title>
 

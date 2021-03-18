@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-02 17:07:32
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:45:15
+ * @LastEditTime: 2021-03-18 10:23:00
 -->
 <template>
   <div v-if="alertShow" class="mc_alert_basic">
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import setting from "../js/setting";
+// import setting from "../js/setting";
 export default {
   name: "mc-alert-basic",
-  mixins: [setting],
+  // mixins: [setting],
   data: function () {
     return {
       message: {},
@@ -35,9 +35,7 @@ export default {
   mounted: function () {
 
   },
-  beforeUnmount:function(){
-      
-  },
+
   methods: {
     hidden(){
       this.alertShow=false

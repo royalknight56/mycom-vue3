@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-14 21:15:47
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 21:48:38
+ * @LastEditTime: 2021-03-18 12:32:48
 -->
 <template>
   <div class="main">
@@ -73,7 +73,6 @@ function scollSys() {
   const router = useRouter();
   let menu = reactive([
     { name: "入门", page: "/guide" },
-
     { name: "基本", page: "/basic" },
     { name: "表单", page: "/form" },
     { name: "提示", page: "/unlock" },
@@ -120,25 +119,10 @@ function scollSys() {
     left.value.children[max].classList.add('left_menu_level2_chosen')
   };
 
-  // let timerNum = setInterval(scollTimer, 300);
-//   function throttle(fn,wait){
-//     var timer = null;
-//     return function(){
-//         var context = this;
-//         var args = arguments;
-//         if(!timer){
-//             timer = setTimeout(function(){
-//                 fn.apply(context,args);
-//                 timer = null;
-//             },wait)
-//         }
-//     }
-// }
-
   let pageChanged = function () {
     for (let i = 0; i < menu.length; i++) {
       if (menu[i].page == current_page.value) {
-        curPageItem = menu[i];
+        curPageItem = menu[i];//找出当前页面item
       }
     }
     curPageItem.children = [];
@@ -152,7 +136,11 @@ function scollSys() {
     right.value.onscroll=scollTimer
   };
   onMounted(() => {
-    pageChanged();
+    nextTick(()=>{
+      pageChanged();
+      hightbreak();
+    })
+    
   });
   onUpdated(() => {
     hightbreak();

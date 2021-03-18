@@ -4,13 +4,15 @@
  * @Author: RoyalKnight
  * @Date: 2021-03-17 11:19:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:40:49
+ * @LastEditTime: 2021-03-18 11:05:06
  */
 import { createApp } from 'vue'
 import App from './App.vue'
-import {mc} from '../../packages/index'
+// import {mc} from '../../packages/index';
+// import {mc} from '../../lib/mycom-vue3.umd.min';
+import * as test from '../../lib/mycom-vue3.umd.min.js';
 import router from './router'
-
+console.log(test)
 // import Highlight from './utils/highlight'; // from 路径是highlight.js的路径，纯属自定义
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'

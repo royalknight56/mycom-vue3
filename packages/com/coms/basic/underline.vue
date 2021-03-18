@@ -4,11 +4,11 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-28 21:12:56
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 21:52:19
+ * @LastEditTime: 2021-03-17 22:51:22
 -->
 <template>
-      <div :id="content" class="mc_text" :href="'#'+content">
-          {{content}}
+      <div :id="hash" class="mc_text" :href="'#'+hash">
+          <slot></slot>
       </div>
 </template>
 
@@ -16,7 +16,7 @@
 import setting from '../js/setting'
 export default {
   name: "mc-title",
-  props:['size','content'],
+  props:['size','hash'],
   mixins:[setting],
   data:function(){
       return{
