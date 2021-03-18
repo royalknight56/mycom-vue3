@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 21:28:16
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-16 17:34:59
+ * @LastEditTime: 2021-03-18 16:41:32
  */
 
 // import scss from '../com/coms/header.vue'
@@ -53,7 +53,7 @@ import mc_form_levelselect from '../com/coms/form/levelselect.vue'
 
 import mc_data_table from '../com/coms/data/table.vue'
 import mc_data_list from '../com/coms/data/list.vue'
-import mc_data_set from '../com/coms/data/set.vue'
+// import mc_data_set from '../com/coms/data/set.vue'
 
 
 
@@ -108,7 +108,8 @@ var components=[
     //数据组件
     mc_data_table,
     mc_data_list,
-    mc_data_set
+
+
 ];
 
 for(let component of components){

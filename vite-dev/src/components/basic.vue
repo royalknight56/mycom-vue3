@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 22:12:33
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 12:19:14
+ * @LastEditTime: 2021-03-18 16:31:48
 -->
 <template>
   <mc-page>
@@ -15,7 +15,7 @@
       可以设置size 为 small,middle<br />
       <!-- 可以设置width,height<br /> -->
 
-      <pre v-highlightjs class="html hljs"><code class="html">
+      <pre class="html hljs"><code class="html">
           {{
             `
             <mc-title >这是一个大标题</mc-title>

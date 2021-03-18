@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-14 21:15:47
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-01-15 21:48:38
+ * @LastEditTime: 2021-03-18 16:16:41
 -->
 <template>
   <div class="main">
@@ -153,6 +153,7 @@ function scollSys() {
   };
   onMounted(() => {
     pageChanged();
+    hightbreak();
   });
   onUpdated(() => {
     hightbreak();

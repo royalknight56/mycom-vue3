@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-03-17 11:19:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 13:59:41
+ * @LastEditTime: 2021-03-18 16:26:57
  */
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -17,5 +17,5 @@ import router from './router'
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'
 // import '../../packages/index/lib/mycom-vue3.css';//引入CSS样式文件 
-
+// .use(VueHighlightJS)
 createApp(App).use(router).use(mc).use(VueHighlightJS).mount('#app')

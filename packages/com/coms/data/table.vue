@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-05 10:23:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 14:53:33
+ * @LastEditTime: 2021-03-18 14:55:56
 -->
 <template>
   <div ref="mainin" class="mc_table">
@@ -116,23 +116,12 @@ export default {
       tableinput,
     };
   },
-  data: function () {
-    return {
-      // chosex: -1,
-      // chosey: -1,
-      // editx: -1,
-      // edity: -1,
-      // changevalue: "",
-    };
-  },
-  mounted: function () {},
   emits: {
     ["update:value"]: () => {
       return true;
     },
   },
-  methods: {
-  },
+
 };
 </script>
 <style lang="scss" scoped>

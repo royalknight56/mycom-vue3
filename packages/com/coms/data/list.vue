@@ -42,7 +42,6 @@ export default {
   mixins: [setting],
   setup(props,context) {
 
-    
     let editx = ref(-1);
 
     let chosex = ref(-1);
@@ -89,42 +88,10 @@ export default {
       listinput,
     };
   },
-  data: function () {
-    return {
-      // editx:-1,
-      // chosex:-1,
-      // changevalue:'',
-    };
-  },
-  mounted: function () {},
   emits: {
     ["update:value"]: () => {
       return true;
     },
-  },
-  methods: {
-    // endedit() {
-
-    //   let re = JSON.parse(JSON.stringify(this.value));
-    //   re[this.editx]= this.changevalue;
-    //   this.$emit("update:value",re);
-    //   this.$refs.list_input.blur();
-    // },
-    // blurfun() {
-    //   this.editx = -1;
-    // },
-    // chose(column, index1) {
-    //   this.chosex = index1;
-    // },
-    // edit(column, index1) {
-    //   if (this.editable == "") {
-    //     this.changevalue = column;
-    //     this.editx = index1;
-    //     this.$nextTick(() => {
-    //       this.$refs.list_input.focus();
-    //     });
-    //   }
-    // },
   },
 };
 </script>

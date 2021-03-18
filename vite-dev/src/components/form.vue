@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 14:44:52
+ * @LastEditTime: 2021-03-18 16:42:19
 -->
 <template>
       <mc-page>
@@ -326,28 +326,6 @@
           <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
           <mc-list width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
           <mc-list editable width='300px' height='200px' name='列表头'  v-model:value="listData" ></mc-list>
-      </mc-page> 
-
-      <mc-page>
-        <mc-title content='Set结构'>Set结构</mc-title>
-        <mc-articl
-          >待完善的文档
-          <pre v-highlightjs class="html hljs"><code class="html">
-          {{
-            `
-          <mc-list  v-model:value="listData" > </mc-list>
-          <mc-list width='300px' name='列表头'  v-model:value="listData" ></mc-list>
-          <mc-list width='300px' height='400px' name='列表头'  v-model:value="listData" ></mc-list>
-
-            `
-          }}
-          </code></pre>
-        </mc-articl>
-          <mc-set  v-model:value="listData" > </mc-set>
-          <mc-set width='300px' name='列表头'  v-model:value="listData" ></mc-set>
-          <mc-set editable width='300px' name='列表头'  v-model:value="listData" ></mc-set>
-          {{listData}}
-      
       </mc-page> 
 </template>
 <script setup>
