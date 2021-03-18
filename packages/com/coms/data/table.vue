@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-05 10:23:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 14:41:22
+ * @LastEditTime: 2021-03-18 14:53:33
 -->
 <template>
   <div ref="mainin" class="mc_table">
@@ -118,11 +118,11 @@ export default {
   },
   data: function () {
     return {
-      chosex: -1,
-      chosey: -1,
-      editx: -1,
-      edity: -1,
-      changevalue: "",
+      // chosex: -1,
+      // chosey: -1,
+      // editx: -1,
+      // edity: -1,
+      // changevalue: "",
     };
   },
   mounted: function () {},
@@ -132,35 +132,6 @@ export default {
     },
   },
   methods: {
-    // endedit() {
-    //   let re = JSON.parse(JSON.stringify(this.value));
-    //   re[this.editx][this.edity]= this.changevalue;
-    //   console.log(this.editx)
-    //   console.log(this.edity)
-    //   console.log(this.changevalue)
-    //   console.log(re)
-    //   this.$emit("update:value",re);
-    //   console.log(this.value)
-    //   this.$refs.table_input.blur();
-    // },
-    // blurfun() {
-    //   this.editx = -1;
-    //   this.edity = -1;
-    // },
-    // chose(column, index1, index2) {
-    //   this.chosex = index1;
-    //   this.chosey = index2;
-    // },
-    // edit(column, index1, index2) {
-    //   if (this.editable == "") {
-    //     this.changevalue = column;
-    //     this.editx = index1;
-    //     this.edity = index2;
-    //     this.$nextTick(() => {
-    //       this.$refs.table_input.focus();
-    //     });
-    //   }
-    // },
   },
 };
 </script>

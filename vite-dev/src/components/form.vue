@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-30 23:19:35
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 14:40:58
+ * @LastEditTime: 2021-03-18 14:44:52
 -->
 <template>
       <mc-page>
@@ -351,14 +351,15 @@
       </mc-page> 
 </template>
 <script setup>
-// import { reactive } from 'vue';
-// let tableData = reactive(
-//    [
-//         ["24", "学生", "1145"],
-//         ["18", "工作", "14"],
-//         ["6", "在家", "19"],
-//       ]
-// )////////////////////
+import { reactive } from 'vue';
+let tableData = reactive(
+   [
+        ["24", "学生", "1145"],
+        ["18", "工作", "14"],
+        ["6", "在家", "19"],
+      ]
+)
+let listData= reactive([89, 64, 21, 18, 6])
 </script>
 <script>
 export default {
@@ -386,13 +387,13 @@ export default {
       sliderch: 23,
       sliderch2: 0,
       datech: "",
-      tableData: [
-        ["24", "学生", "1145"],
-        ["18", "工作", "1455"],
-        ["6", "在家", "19"],
-      ],
+      // tableData: [
+      //   ["24", "学生", "1145"],
+      //   ["18", "工作", "1455"],
+      //   ["6", "在家", "19"],
+      // ],
       tableCol: ["年龄", "职业", "编号"],
-      listData: [89, 64, 21, 18, 6],
+      // listData: [89, 64, 21, 18, 6],
 
       levelselectlabel: [
         {

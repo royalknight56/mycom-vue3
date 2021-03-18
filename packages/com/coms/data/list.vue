@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-08 19:23:41
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-10 10:43:29
+ * @LastEditTime: 2021-03-18 14:54:01
 -->
 <template>
   <div class="mc_list_out">
@@ -14,7 +14,11 @@
           @dblclick="edit(row, index1, $event)"
            class="list_row" v-for="(row, index1) in value" :key="index1">
            <input
-            ref="list_input"
+            :ref="
+              (el) => {
+                listinput[index1] = el
+              }
+            "
             @blur="blurfun()"
             @keyup.enter="endedit()"
             v-model="changevalue"
@@ -29,17 +33,67 @@
 </template>
 
 <script>
+import { nextTick, ref } from 'vue';
 import setting from "../js/setting";
 export default {
   name: "mc-list",
   props: ["value", "name","editable"],
 
   mixins: [setting],
+  setup(props,context) {
+
+    
+    let editx = ref(-1);
+
+    let chosex = ref(-1);
+
+    let changevalue = ref("");
+
+    let listinput = ref([]);
+    function endedit() {
+      let re = JSON.parse(JSON.stringify(props.value));
+      re[editx.value]= changevalue.value;
+      context.emit("update:value", re);
+      props.value[editx.value]= changevalue.value;
+      listinput.value[editx.value].blur()
+
+    }
+    function blurfun() {
+      editx.value = -1;
+    }
+    function chose(column, index1) {
+      chosex.value = index1;
+
+    }
+    function edit(column, index1) {
+      if (props.editable == "") {
+        changevalue.value = column;
+        editx.value = index1;
+        
+        nextTick(() => {
+          listinput.value[index1].focus();
+        });
+      }
+    }
+
+    return {
+      chosex,
+
+      editx,
+
+      changevalue,
+      endedit,
+      blurfun,
+      chose,
+      edit,
+      listinput,
+    };
+  },
   data: function () {
     return {
-      editx:-1,
-      chosex:-1,
-      changevalue:'',
+      // editx:-1,
+      // chosex:-1,
+      // changevalue:'',
     };
   },
   mounted: function () {},
@@ -49,28 +103,28 @@ export default {
     },
   },
   methods: {
-    endedit() {
+    // endedit() {
 
-      let re = JSON.parse(JSON.stringify(this.value));
-      re[this.editx]= this.changevalue;
-      this.$emit("update:value",re);
-      this.$refs.list_input.blur();
-    },
-    blurfun() {
-      this.editx = -1;
-    },
-    chose(column, index1) {
-      this.chosex = index1;
-    },
-    edit(column, index1) {
-      if (this.editable == "") {
-        this.changevalue = column;
-        this.editx = index1;
-        this.$nextTick(() => {
-          this.$refs.list_input.focus();
-        });
-      }
-    },
+    //   let re = JSON.parse(JSON.stringify(this.value));
+    //   re[this.editx]= this.changevalue;
+    //   this.$emit("update:value",re);
+    //   this.$refs.list_input.blur();
+    // },
+    // blurfun() {
+    //   this.editx = -1;
+    // },
+    // chose(column, index1) {
+    //   this.chosex = index1;
+    // },
+    // edit(column, index1) {
+    //   if (this.editable == "") {
+    //     this.changevalue = column;
+    //     this.editx = index1;
+    //     this.$nextTick(() => {
+    //       this.$refs.list_input.focus();
+    //     });
+    //   }
+    // },
   },
 };
 </script>
