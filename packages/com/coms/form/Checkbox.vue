@@ -4,15 +4,18 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:49:31
+ * @LastEditTime: 2021-03-19 12:08:42
 -->
 <template>
+<div class="mc_checkbox_outer">
   <div @click="chose()" class="mc_checkbox">
     <div class="mc_checkbox_cir">
       <div v-if="ifChose" class="mc_checkbox_cir_cen"></div>
     </div>
     <slot></slot>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -53,6 +56,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import  '../../../scssvar.scss';
+.mc_checkbox_outer{
+  position: relative;
+  width:fit-content;
+  height: 30px;
+  display: inline-block;
+}
 .mc_checkbox {
   position: relative;
   width: 100%;

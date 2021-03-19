@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 12:50:50
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:51:24
+ * @LastEditTime: 2021-03-19 12:52:13
 -->
 <template>
   <div class="mc_select">
@@ -49,6 +49,8 @@ export default {
         $this.mouse_click[key]();
       }
     }
+
+    this.chosen = this.label[0].label;
   },
   emits: {
     ['update:value']: () => {
@@ -88,6 +90,7 @@ export default {
   overflow: hidden;
   height: 40px;
   line-height: 40px;
+  text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.8);
   background-color: black;
@@ -104,7 +107,9 @@ export default {
 .mc_select_menu {
   width: max-content;
   position: absolute;
+  z-index: 1;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.233);

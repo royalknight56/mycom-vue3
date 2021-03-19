@@ -192,16 +192,20 @@ export default {
   text-align: center;
   line-height: 20px;
   border: $borderstyle;
+  transition: all 0.2s;
 }
 .date_item:hover{
     background-color: $hoverblackcolor;
+    color: aliceblue;
 }
 .mc_date_menu {
   position: absolute;
+  z-index: 1;
   left: 50%;
   transform: translateX(-50%);
   background-color: $whitecolor;
   animation: mc_date_menu_cenan 0.2s;
+  user-select: none;
 }
 
 .mc_date_input_main {

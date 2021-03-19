@@ -122,7 +122,7 @@
       <mc-tip text="补充说明文字提示"><mc-tag>文字提示</mc-tag></mc-tip>
       <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
       <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
-      <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>`}}
+      <mc-tip><mc-tag>文字提示</mc-tag></mc-tip>`}}
               </code></pre>
         </mc-articl>
         
@@ -134,7 +134,7 @@
       <mc-tip text="补充说明文字提示"><mc-tag>文字提示</mc-tag></mc-tip>
       <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
       <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
-      <mc-tip text="补充说明"><mc-tag>文字提示</mc-tag></mc-tip>
+      <mc-tip><mc-tag>文字提示</mc-tag></mc-tip>
         
         <mc-title size="small" content="属性值"></mc-title>
         <mc-table
@@ -195,7 +195,7 @@
         checkch: [],
         current_page: "/basicNew",
         table: 
-          {"title":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"link":[["type","颜色","String","red/blue/yellow","-"],["href","指向的链接","String","[link]","-"]],"divider":[["contentPosition"," 分割线文字位置","String","left/right/middle","middle"]],"tip":[],"tag":[]}
+          {"title":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"link":[["type","颜色","String","red/blue/yellow","-"],["href","指向的链接","String","[link]","-"]],"divider":[["contentPosition"," 分割线文字位置","String","left/right/middle","middle"]],"tip":[["text","文字提示的内容","String","String","\"提示\""]],"tag":[["type","颜色","String","String","\"white\""]]}
         ,
       };
     },

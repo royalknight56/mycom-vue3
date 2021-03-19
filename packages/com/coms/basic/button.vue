@@ -4,9 +4,10 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:10:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-08 11:07:46
+ * @LastEditTime: 2021-03-19 12:28:34
 -->
 <template>
+<div class="mc_button_outer">
   <div
     :class="[
       size ? className[size] : 'small_button',
@@ -16,12 +17,24 @@
   >
     <slot></slot>
   </div>
+</div>
+  
 </template>
 
 <script>
 export default {
   name: "mc-button",
   props: ["width", "size", "type",'round'],
+  props:{
+    type: {
+      type: String,
+      default: "none",
+    },
+    size: {
+      type: String,
+      default: "small",
+    },
+  },
   data: function () {
     return {
       className: {
@@ -45,11 +58,17 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../../scssvar.scss";
+.mc_button_outer{
+  height:fit-content;
+  width: 200px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 .mc_button {
   height: 100%;
   position: relative;
-  margin: 10px auto;
-  margin-top: 10px;
+  // margin: 10px auto;
+  // margin-top: 10px;
   user-select: none;
   /* border: 1px solid rgba(80, 80, 80, 0.486); */
   border: $borderstyle;
@@ -66,11 +85,13 @@ export default {
 
 .small_button {
   padding: 5px;
-  width: 100px;
+  width: 60px;
+  height: 20px;
 }
 .large_button {
   padding: 10px;
-  width: 200px;
+  width: 100px;
+  height: 30px;
 }
 .red {
   background-color: rgba(206, 71, 61, 0.555);

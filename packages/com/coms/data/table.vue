@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-05 10:23:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 14:55:56
+ * @LastEditTime: 2021-03-19 12:04:08
 -->
 <template>
   <div ref="mainin" class="mc_table">
@@ -143,19 +143,25 @@ export default {
 
   width: 100%;
   height: 30px;
+  
   border: $borderstyle;
   text-align: center;
   transition: $alltransition;
   white-space: nowrap;
+  overflow: hidden;
 }
 .table_column:hover {
   background-color: $hovercolor;
 }
 .table_item_cross {
   background-color: rgb(230, 230, 230);
+  border: none;
+  overflow: hidden;
 }
 .table_item_chose {
   background-color: rgb(192, 192, 192);
+  border: none;
+  overflow: hidden;
 }
 .table_item_input {
   position: absolute;
@@ -173,7 +179,9 @@ export default {
 .table_item {
   overflow: hidden;
   position: relative;
+  
   height: 100%;
+  padding: 2px;
 }
 .prop_column {
   width: 100%;

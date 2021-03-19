@@ -21,11 +21,15 @@
           <pre v-highlightjs class="html hljs"><code class="html">
               {{`
         <mc-input v-model:value="inputch" placeholder="请输入密码"></mc-input>
+        <mc-input height='140px' v-model:value="inputch" placeholder="请输入密码"></mc-input>
+        <mc-input width='140px' v-model:value="inputch" placeholder="请输入密码"></mc-input>
         `}}
               </code></pre>
         </mc-articl>
         
         <mc-input v-model:value="inputch" placeholder="请输入密码"></mc-input>
+        <mc-input height='140px' v-model:value="inputch" placeholder="请输入密码"></mc-input>
+        <mc-input width='140px' v-model:value="inputch" placeholder="请输入密码"></mc-input>
         
         
         {{inputch}}
@@ -51,14 +55,16 @@
 
           <pre v-highlightjs class="html hljs"><code class="html">
               {{`
-        <mc-button test  size="small"> 按钮 </mc-button>
+        <mc-button size="large" type="blue"> 大按钮 </mc-button>
+        <mc-button> 按钮 </mc-button>
         <mc-button size="small" type="red"> 按钮 </mc-button>
         <mc-button size="small" type="blue"> 按钮 </mc-button>
         <mc-button size="large"> 大按钮 </mc-button>`}}
               </code></pre>
         </mc-articl>
         
-        <mc-button test  size="small"> 按钮 </mc-button>
+        <mc-button size="large" type="blue"> 大按钮 </mc-button>
+        <mc-button> 按钮 </mc-button>
         <mc-button size="small" type="red"> 按钮 </mc-button>
         <mc-button size="small" type="blue"> 按钮 </mc-button>
         <mc-button size="large"> 大按钮 </mc-button>
@@ -171,7 +177,7 @@
         <mc-title size="small" content="属性值"></mc-title>
         <mc-table
           :prop="['参数', '说明', '类型', '可选值', '默认值']"
-          v-model:value="table.select"
+          v-model:value="table.levelselect"
         >
         </mc-table>
     </mc-page>
@@ -194,14 +200,14 @@
 
           <pre v-highlightjs class="html hljs"><code class="html">
               {{`
-        <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
-        <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
+        <mc-switch v-model:value="switchch"> </mc-switch>开关 
+        <mc-switch v-model:value="switchch"> </mc-switch>开关 
         `}}
               </code></pre>
         </mc-articl>
         
-        <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
-        <mc-switch v-model:value="switchch" label="1"> </mc-switch>开关 
+        <mc-switch v-model:value="switchch"> </mc-switch>开关 
+        <mc-switch v-model:value="switchch"> </mc-switch>开关 
         
         
     {{switchch}}
@@ -500,7 +506,7 @@
         <mc-title size="small" content="属性值"></mc-title>
         <mc-table
           :prop="['参数', '说明', '类型', '可选值', '默认值']"
-          v-model:value="table.rate"
+          v-model:value="table.table"
         >
         </mc-table>
     </mc-page>
@@ -540,7 +546,7 @@
         <mc-title size="small" content="属性值"></mc-title>
         <mc-table
           :prop="['参数', '说明', '类型', '可选值', '默认值']"
-          v-model:value="table.rate"
+          v-model:value="table.list"
         >
         </mc-table>
     </mc-page>
@@ -629,7 +635,7 @@
         checkch: [],
         current_page: "/formNew",
         table: 
-          {"input":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"button":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"select":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"switch":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"radio":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"checkbox":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"number":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"date":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"slider":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"rate":[["hash","标题哈希值","String","-","-"],["size","标题大小","String","small/middle/large","large"]]}
+          {"input":[["v-model:value","绑定的变量名","String","-","-"],["size","标题大小","String","small/middle/large","large"]],"button":[["type","按钮颜色","String","red/blue/none","none"],["size","按钮大小","String","small/large","small"]],"select":[["v-model:value","绑定的结果变量","var","-","-"],["label","选择标签","Array","-","[]"]],"levelselect":[["v-model:value","绑定的结果变量","var","-","-"],["label","选择标签","Array","-","[]"]],"switch":[["v-model:value","绑定的结果变量","var","-","-"]],"radio":[["v-model:value","绑定的结果变量","var","-","-"],["label","选项值","var","-","-"]],"checkbox":[["v-model:value","绑定的结果变量","var","-","-"],["label","选项值","var","-","-"]],"number":[["v-model:value","绑定的结果变量","var","-","-"]],"date":[["v-model:value","绑定的结果变量","var","-","-"]],"slider":[["v-model:value","绑定的结果变量","Number","-","-"],["top","最高值","Number","-","100"]],"rate":[["v-model:value","绑定的结果变量","var","-","-"],["top","最高值","Number","-","5"]],"table":[["prop","表格头","Array","-","-"],["size","表格值","Array<Array>","-","-"]],"list":[["v-model:value","列表值","Array","-","-"],["name","列表头","String","-","-"]]}
         ,
       };
     },

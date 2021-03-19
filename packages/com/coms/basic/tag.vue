@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 19:29:40
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2020-10-04 17:06:14
+ * @LastEditTime: 2021-03-19 12:18:43
 -->
 
 <template>
@@ -20,6 +20,12 @@ import setting from "../js/setting";
 export default {
   name: "mc-tag",
   props: ["type"],
+  props:{
+    type: {
+      type: String,
+      default: "white",
+    },
+  },
   mixins: [setting],
   data: function () {
     return {

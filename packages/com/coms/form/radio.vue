@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-10-01 10:17:36
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-17 13:50:41
+ * @LastEditTime: 2021-03-19 12:39:26
 -->
 <template>
   <div @click="chose()" class="mc_radio">
@@ -46,7 +46,7 @@ export default {
 @import  '../../../scssvar.scss';
 .mc_radio {
   position: relative;
-  width: 100%;
+  width: fit-content;
   height: 100%;
   display: flex;
   justify-content: center;
