@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-03-17 20:12:28
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-18 13:54:02
+ * @LastEditTime: 2021-03-20 09:42:50
  */
 var fs = require("fs");
 
@@ -15,7 +15,9 @@ function getOnePage_temp(item) {
         {{\`${item.extend_js}\`}}
         </code></pre>`
     }
-    let perpage = `
+    let perpage =``;
+    if(item.title){
+        perpage = `
     <mc-page>
         <mc-title :content="'${item.title}'">${ item.title }</mc-title>
     
@@ -38,6 +40,9 @@ function getOnePage_temp(item) {
         </mc-table>
     </mc-page>
         `
+    }else{
+        perpage = ` `
+    }
     return perpage
 }
 function get_table(list){
@@ -53,7 +58,6 @@ function get_vueSetup(list){
         if(list[i].extend_js){
             str+= list[i].extend_js
         }
-        
     }
     return str
 }

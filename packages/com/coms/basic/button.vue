@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2020-09-29 16:10:15
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-19 12:28:34
+ * @LastEditTime: 2021-03-20 10:39:43
 -->
 <template>
 <div class="mc_button_outer">
@@ -60,7 +60,7 @@ export default {
 @import "../../../scssvar.scss";
 .mc_button_outer{
   height:fit-content;
-  width: 200px;
+  width: fit-content;
   margin-top: 3px;
   margin-bottom: 3px;
 }
@@ -85,12 +85,12 @@ export default {
 
 .small_button {
   padding: 5px;
-  width: 60px;
+  width: fit-content;
   height: 20px;
 }
 .large_button {
   padding: 10px;
-  width: 100px;
+  width: fit-content;
   height: 30px;
 }
 .red {
