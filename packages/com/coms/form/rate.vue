@@ -6,24 +6,14 @@
     ref="rate"
     class="mc_rate"
   >
-      <div
-        @click="chose(item)"
-        v-for="item in count"
-        :key="item"
-        :class="{ mc_rate_row_chose:mod == 0? item <= cho: item <= cur }"
-        class="mc_rate_row"
-      >
-      </div>
-    <!-- <div v-if="mod == 1">
-      <div
-        @click="chose(item)"
-        v-for="item in count"
-        :key="item"
-        :class="{ mc_rate_row_chose: item <= cur }"
-        class="mc_rate_row"
-      >
-      </div>
-    </div> -->
+    <div
+      @click="chose(item)"
+      v-for="item in count"
+      :key="item"
+      :class="{ mc_rate_row_chose: mod == 0 ? item <= cho : item <= cur }"
+      class="mc_rate_row"
+    >
+    </div>
   </div>
 </template>
 
@@ -53,14 +43,14 @@ export default {
   },
   watch: {
     value: function () {
-        this.cho=this.value
+      this.cho = this.value;
     },
     num: function () {
-      this.cur = parseInt(this.num / (100/this.count) + 1);
+      this.cur = parseInt(this.num / (100 / this.count) + 1);
     },
   },
   mounted: function () {
-      this.cho=this.value
+    this.cho = this.value;
     // console.dir(this.$el)
     // var ifdrug=false;
     this.top ? (this.count = this.top) : (this.count = 5);
@@ -90,38 +80,6 @@ export default {
         }
       }
     });
-
-    //   this.$refs.button.addEventListener('touchstart',function(e){
-    //       start.x=e.touches[0].pageX;
-    //       start.buttonx=$this.$refs.button.style.left.slice(0,-2);
-    //       $this.ifdrug=true;
-    //   })
-    // document.addEventListener("touchmove", function (e) {
-    //   if ($this.ifdrug) {
-    //     var temp = start.buttonx - start.x + e.touches[0].pageX;
-    //     if (temp < left || temp > right) {
-    //       //
-    //     } else {
-    //       $this.$refs.button.style.left =
-    //         start.buttonx - start.x + e.touches[0].pageX + "px";
-    //       $this.num = parseInt((100 * (temp - left)) / (right - left - 1));
-    //       $this.emit($this.num);
-    //     }
-    //   }
-    // });
-    //   document.addEventListener('touchend',function(){
-    //       $this.ifdrug=false;
-    //   })
-
-    //   this.$refs.button.addEventListener('mousedown',function(e){
-    //       start.x=e.pageX;
-    //       start.buttonx=$this.$refs.button.style.left.slice(0,-2);
-    //       $this.ifdrug=true;
-    //   })
-
-    //   document.addEventListener('mouseup',function(){
-    //       $this.ifdrug=false;
-    //   })
   },
   methods: {
     chose(item) {
@@ -130,10 +88,10 @@ export default {
     },
     endchose() {
       this.cur = 0;
-      this.mod=0
+      this.mod = 0;
     },
     startchose() {
-        this.mod=1
+      this.mod = 1;
     },
   },
 };
@@ -144,8 +102,8 @@ export default {
 .mc_rate {
   position: relative;
   margin: 4px 0;
-  width: 300px;
-  height: 30px;
+  width: 200px;
+  height: 20px;
   top: 50%;
   background-color: rgba(255, 255, 255, 0.13);
   transition: all 0.3s;
@@ -155,8 +113,8 @@ export default {
   cursor: pointer;
 }
 .mc_rate_row {
-    flex-shrink: 0;
-  width: 30px;
+  flex-shrink: 0;
+  width: 20px;
   border: $borderstyle;
   background-color: rgba(255, 255, 255, 0);
   transition: $alltransition;

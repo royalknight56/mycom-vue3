@@ -4,7 +4,7 @@
  * @Author: RoyalKnight
  * @Date: 2021-01-15 10:39:18
  * @LastEditors: RoyalKnight
- * @LastEditTime: 2021-03-20 10:29:40
+ * @LastEditTime: 2021-04-18 09:51:53
  */
 export default{
     list:[
@@ -34,7 +34,7 @@ export default{
             {
               path: '/layout',
               name: 'Layout',
-              component: () => import('../components/layout.vue')
+              component: () => import('../components/layoutNew.vue')
             },
             {
               path: '/useful',
